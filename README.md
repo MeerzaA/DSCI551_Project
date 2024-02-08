@@ -73,7 +73,7 @@ We believe the project requirements are to build a web application that users ca
 ## <span style="text - decoration: underline;">Timeline</span>
 
 **Weekly Meetings: Mon & Thur (Started on 1/25)**
-|  |
+| | |
 | :---: |  :---: | 
 | February - 02 | Submit project proposal |
 | February - 09 | Finish Firebase skeleton and upload Yelp dataset into dedicated tables |
