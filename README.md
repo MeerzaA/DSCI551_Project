@@ -27,36 +27,22 @@ We believe the project requirements are to build a web application that users ca
 <h2 align="center">Planned implementation</h2>
 
 1. Dataset & Data Cleaning
+  * Download the Yelp dataset and perform data cleaning, handling null values, features selection, etc
+2. Database Setup
+  * Setup Firebase databases (2) will separate the data by Eastern and Western states.
+3. Backend Development
+  * Create a hash function to split the data by East and West
+  * Write Python functions for data management (add, delete, modify) study spots
+  * Express.js framework
+4. Develop CLI interface
+  * Write Python functions to develop a CLI menu for data managers for add, delete, and modifying
+5. Frontend Development
+  * Deciding between Javascript or Python framework
+6. Testing & Debugging
+  * Unit tests
+  * Documentation
+  * User guide and code documentation
 
-- Download the Yelp dataset and perform data cleaning, handling null values, features selection, etc
-
-- Database Setup
-
-- Setup Firebase databases (2) will separate the data by Eastern and Western states.
-
-- Backend Development
-
-- Create a hash function to split the data by East and West
-
-- Write Python functions for data management (add, delete, modify) study spots
-
-- Express.js framework
-
-- Develop CLI interface
-
-- Write Python functions to develop a CLI menu for data managers for add, delete, and modifying
-
-- Frontend Development
-
-- Deciding between Javascript or Python framework
-
-- Testing & Debugging
-
-- Unit tests
-
-- Documentation
-
-- User guide and code documentation
 
 <h2 align="center">Team Responsibilitiess</h2>
 
