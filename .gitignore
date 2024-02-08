@@ -1,3 +1,4 @@
 # Ignore compiled Python files
 data/
 node_modules/
+*.json
