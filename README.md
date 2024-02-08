@@ -1,11 +1,13 @@
 <h2 align="center">Project Proposal: Study Yelp</h2>
-* * *
+
 <p align="center">An application to help students find the best study spaces in their</p>
 <p align="center">surrounding area based on their preferences.</p>
+
 
 <h3 align="center">Meerza Ahmed, mhahmed@usc.edu</h3>
 <h3 align="center">Melissa Perkins, perkinsm@usc.edu</h3>
 <h3 align="center">Alan Trinh, alantrin@usc.edu</h3>
+
 
 <p align="center">DSCI 551 - Foundations of Data Management</p>
 <p align="center">Prof. Wensheng Wu</p>
