@@ -41,9 +41,9 @@ We believe the project requirements are to build a web application that users ca
 
 | | |
 | :---: | :---: | 
-| Meerza | Data collection, Data cleaning, Management, Data Modeling (ER / EER), CLI Implementation |
-| Melissa | Data collection, Data Analysis, Data Vis, UI Design, Website Component Implementation, CLI implementation |
-| Alan | Data collection, Data Analysis, UI Design, Data Prediction Modeling, queries, CLI Implementation |
+| Meerza | Data source, Data cleaning, Management, Data Modeling (ER / EER), CLI Implementation |
+| Melissa | Data source, Data Analysis, Data Vis, UI Design, Website Component Implementation, CLI implementation |
+| Alan | Data source, Data Analysis, UI Design, Data Prediction Modeling, queries, CLI Implementation |
 
 <h2 align="center">Timeline</h2>
 
