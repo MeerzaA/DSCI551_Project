@@ -2,7 +2,7 @@
 
 <p align="center">An application to help students find the best study spaces in their</p>
 <p align="center">surrounding area based on their preferences.</p>
-<br>
+<hr>
 <h3 align="center">Meerza Ahmed, mhahmed@usc.edu</h3>
 <h3 align="center">Melissa Perkins, perkinsm@usc.edu</h3>
 <h3 align="center">Alan Trinh, alantrin@usc.edu</h3>
