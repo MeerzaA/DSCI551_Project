@@ -19,7 +19,7 @@ Prof. Wensheng Wu
 
 ## <span style="text - decoration: underline;">Team Member Background & Skills</span>
 
-**Meerza Ahmed **- B.S. in Computer Programming & Information Systems from SUNY Farmingdale. I mainly used C++, and Java during my bachelor's, and got to work extensively with database systems. I have previously used SQL, firebase, HTML/CSS, JavaScript, and data modeling to build a web application. I have also worked with PostGIS, to map spatial data.
+**Meerza Ahmed** - B.S. in Computer Programming & Information Systems from SUNY Farmingdale. I mainly used C++, and Java during my bachelor's, and got to work extensively with database systems. I have previously used SQL, firebase, HTML/CSS, JavaScript, and data modeling to build a web application. I have also worked with PostGIS, to map spatial data.
 
 **Melissa Perkins** - Undergraduate degree in Cognitive Science from UC Berkeley with some Python, R and SQL experience during that time. I started the MS program in Applied Data Science in 2021 as a part-time student while working full-time on the HSC campus. I have since gained more experience with Python and various libraries, I was also introduced to Java and CSS. As a project for DSCI 554, I created a dashboard using a Javascript framework- Vue.
 
@@ -65,8 +65,8 @@ We believe the project requirements are to build a web application that users ca
 
 ## <span style="text - decoration: underline;">Team Responsibilities</span>
 
+| :---: |  :---: | 
 | Meerza | Data collection, Data cleaning, Management, Data Modeling (ER / EER), CLI Implementation |
-| --- |  --- | 
 | Melissa | Data collection, Data Analysis, Data Visualization, UI Design, Website Component Implementation, CLI implementation |
 | Alan | Data collection, Data Analysis, UI Design, Data Prediction Modeling, Python queries, CLI Implementation |
 
@@ -75,7 +75,7 @@ We believe the project requirements are to build a web application that users ca
 **Weekly Meetings: Mon & Thur (Started on 1/25)**
 
 | February - 02 | Submit project proposal |
-| --- |  --- | 
+| :---: |  :---: | 
 | February - 09 | Finish Firebase skeleton and upload Yelp dataset into dedicated tables |
 | February - 23 | Build a working front-end skeleton |
 | March - 01 | Midterm Report |
