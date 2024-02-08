@@ -1,4 +1,4 @@
-<h1 align="center"> Project Proposal: Study Yelp </h1>
+<p align="center"># Project Proposal: Study Yelp</p>
 
 <p align="center">An application to help students find the best study spaces in their</p>
 <p align="center">surrounding area based on their preferences.</p>
