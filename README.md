@@ -16,7 +16,7 @@
 
 
 
-## <span style="text - decoration: underline;">Team Member Background & Skills</span>
+## <span align="center" style="text - decoration: underline;">Team Member Background & Skills</span>
 
 **Meerza Ahmed** - B.S. in Computer Programming & Information Systems from SUNY Farmingdale. I mainly used C++, and Java during my bachelor's, and got to work extensively with database systems. I have previously used SQL, firebase, HTML/CSS, JavaScript, and data modeling to build a web application. I have also worked with PostGIS, to map spatial data.
 
@@ -24,11 +24,11 @@
 
 **Alan Trinh** - Minored in Data Science from UC Berkeley with experience in R, SAS, SQL, and Python. I started the MS program in Applied Data Science last fall and have taken DSCI 550. Extensive knowledge in building predictive models, classification models, data analysis, and visualization. Have some experience with Python programming and am looking forward to learning more about full-stack development. Currently working in product development and have lots of experience working with software engineers, data scientists, and UI/UX designers.
 
-## <span style="text - decoration: underline;">Project requirements</span>
+## <span align="center" style="text - decoration: underline;">Project requirements</span>
 
 We believe the project requirements are to build a web application that users can visit to interact with a data source. The web app should ideally have a distributed database, with a minimum of two tables, and two UI interfaces. The first one should be front-end heavy and be designed to display our dataset in a meaningful way so that users can interact with it, the other UI should be reserved for data manipulation by a data manager; this one can be a CLI. It is also important to note that the data manager needs to be able to add, delete, and modify any specific tuple in any of our database tables. Our implementation needs to include a standout feature or element, to gain full credit on the project.
 
-## <span style="text - decoration: underline;">Planned implementation</span>
+## <span align="center" style="text - decoration: underline;">Planned implementation</span>
 
 1. Dataset & Data Cleaning
 
@@ -62,14 +62,14 @@ We believe the project requirements are to build a web application that users ca
 
 - User guide and code documentation
 
-## <span style="text - decoration: underline;">Team Responsibilities</span>
+## <span align="center" style="text - decoration: underline;">Team Responsibilities</span>
 | | |
 | :---: | :---: | 
 | Meerza | Data collection, Data cleaning, Management, Data Modeling (ER / EER), CLI Implementation |
 | Melissa | Data collection, Data Analysis, Data Visualization, UI Design, Website Component Implementation, CLI implementation |
 | Alan | Data collection, Data Analysis, UI Design, Data Prediction Modeling, Python queries, CLI Implementation |
 
-## <span style="text - decoration: underline;">Timeline</span>
+## <span align="center" style="text - decoration: underline;">Timeline</span>
 
 **Weekly Meetings: Mon & Thur (Started on 1/25)**
 | | |
