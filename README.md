@@ -1,22 +1,19 @@
-<h2 align="center"> Project Proposal: Study Yelp </h2>
+<h1 align="center"> Project Proposal: Study Yelp </h1>
 
 <p align="center">An application to help students find the best study spaces in their</p>
 <p align="center">surrounding area based on their preferences.</p>
 
-
 <h2 align="center">Meerza Ahmed, mhahmed@usc.edu</h2>
+<h2 align="center">Melissa Perkins, perkinsm@usc.edu</h2>
+<h2 align="center">Alan Trinh, alantrin@usc.edu</h2>
 
-# Meerza Ahmed, mhahmed@usc.edu  
+<h3 align="center">DSCI 551 - Foundations of Data Management</h3>
+<h3 align="center">Prof. Wensheng Wu</h3>
+<h3 align="center">05/03/2024</h3>
 
-# Melissa Perkins, perkinsm@usc.edu
 
-# Alan Trinh, alantrin@usc.edu
 
-DSCI 551 - Foundations of Data Management
 
-Prof. Wensheng Wu
-
-02/02/24
 
 
 ## <span style="text - decoration: underline;">Team Member Background & Skills</span>
