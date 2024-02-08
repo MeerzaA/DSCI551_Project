@@ -64,7 +64,7 @@ We believe the project requirements are to build a web application that users ca
 - User guide and code documentation
 
 ## <span style="text - decoration: underline;">Team Responsibilities</span>
-|  |
+| | |
 | :---: | :---: | 
 | Meerza | Data collection, Data cleaning, Management, Data Modeling (ER / EER), CLI Implementation |
 | Melissa | Data collection, Data Analysis, Data Visualization, UI Design, Website Component Implementation, CLI implementation |
