@@ -3,13 +3,13 @@
 <p align="center">An application to help students find the best study spaces in their</p>
 <p align="center">surrounding area based on their preferences.</p>
 
-<h2 align="center">Meerza Ahmed, mhahmed@usc.edu</h2>
-<h2 align="center">Melissa Perkins, perkinsm@usc.edu</h2>
-<h2 align="center">Alan Trinh, alantrin@usc.edu</h2>
+<h3 align="center">Meerza Ahmed, mhahmed@usc.edu</h3>
+<h3 align="center">Melissa Perkins, perkinsm@usc.edu</h3>
+<h3 align="center">Alan Trinh, alantrin@usc.edu</h3>
 
-<h3 align="center">DSCI 551 - Foundations of Data Management</h3>
-<h3 align="center">Prof. Wensheng Wu</h3>
-<h3 align="center">05/03/2024</h3>
+<p align="center">DSCI 551 - Foundations of Data Management</p>
+<p align="center">Prof. Wensheng Wu</p>
+<p align="center">05/03/2024</p>
 
 
 
