@@ -40,7 +40,7 @@ We believe the project requirements are to build a web application that users ca
 <h2 align="center">Team Responsibilitiess</h2>
 
 | | |
-| :---: | :---: | 
+| :---: | :-----: | 
 | Meerza | Data source, Data cleaning, Management, Data Modeling (ER / EER), CLI design |
 | Melissa | Data source, Data Analysis, Data Vis, UI Design, Website Component Implementation, CLI design |
 | Alan | Data source, Data Analysis, UI Design, Data Prediction Modeling, queries, CLI design |
