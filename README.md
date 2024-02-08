@@ -64,7 +64,8 @@ We believe the project requirements are to build a web application that users ca
 - User guide and code documentation
 
 ## <span style="text - decoration: underline;">Team Responsibilities</span>
-
+|  |
+| :---: | :---: | 
 | Meerza | Data collection, Data cleaning, Management, Data Modeling (ER / EER), CLI Implementation |
 | Melissa | Data collection, Data Analysis, Data Visualization, UI Design, Website Component Implementation, CLI implementation |
 | Alan | Data collection, Data Analysis, UI Design, Data Prediction Modeling, Python queries, CLI Implementation |
@@ -72,7 +73,7 @@ We believe the project requirements are to build a web application that users ca
 ## <span style="text - decoration: underline;">Timeline</span>
 
 **Weekly Meetings: Mon & Thur (Started on 1/25)**
-| | |
+|  |
 | :---: |  :---: | 
 | February - 02 | Submit project proposal |
 | February - 09 | Finish Firebase skeleton and upload Yelp dataset into dedicated tables |
