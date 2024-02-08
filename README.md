@@ -4,6 +4,8 @@ An application to help students find the best study spaces in their
 
 surrounding area based on their preferences.
 
+<h1 align="center">Meerza Ahmed, mhahmed@usc.edu</h1>
+
 # Meerza Ahmed, mhahmed@usc.edu  
 
 # Melissa Perkins, perkinsm@usc.edu
