@@ -1,10 +1,10 @@
-# Project Proposal: Study Yelp
+<h2 align="center"> Project Proposal: Study Yelp </h2>
 
-An application to help students find the best study spaces in their
+<p align="center">An application to help students find the best study spaces in their</p>
+<p align="center">surrounding area based on their preferences.</p>
 
-surrounding area based on their preferences.
 
-<h1 align="center">Meerza Ahmed, mhahmed@usc.edu</h1>
+<h2 align="center">Meerza Ahmed, mhahmed@usc.edu</h2>
 
 # Meerza Ahmed, mhahmed@usc.edu  
 
