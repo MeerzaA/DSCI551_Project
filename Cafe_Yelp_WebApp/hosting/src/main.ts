@@ -33,12 +33,12 @@ export const auth = getAuth(app);
 export const database = getDatabase(app);
 
 
-//const rootRef = ref(database);
-//const businessRef = child(rootRef, 'business');
+const rootRef = ref(database);
+const businessRef = child(rootRef, 'business');
 
-//onValue(businessRef, (snapshot) => {
-//  const usersData = snapshot.val();
-//  console.log(usersData);
-//});
+onValue(businessRef, (snapshot) => {
+  const usersData = snapshot.val();
+  console.log(usersData);
+});
 
 
