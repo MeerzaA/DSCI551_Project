@@ -25,7 +25,7 @@ import { AppComponent } from './app.component';
     SidebarComponent
   ],
   providers: [],
-  //schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
