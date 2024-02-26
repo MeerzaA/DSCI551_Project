@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Caveat Brush';
+    src: url('https://fonts.gstatic.com/s/caveatbrush/v11/EYq0maZfwr9S9-ETZc3fKXtMW7mT03pdQw.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 40px
+}
+
+header {
+    background-color: #191970; /* Add your desired background color */
+    text-align: center;
+    padding: 10px; /* Add padding for spacing */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
