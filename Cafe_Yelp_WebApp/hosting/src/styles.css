@@ -4,20 +4,15 @@
 @import "primeng/resources/themes/lara-light-blue/theme.css";
 @import "primeng/resources/primeng.css";
 
-*{
-    box-sizing: border-box;
-}
-
-html{
-    font-size: 16px;
-}
 
 body{
     margin: 0;
     font-size: 18px;
 }
 
-app-sidebar {
-    width: 200px; 
-    background-color: #f0f0f0;
-  }
+@font-face {
+    font-family: 'Caveat Brush';
+    src: url('https://fonts.gstatic.com/s/caveatbrush/v11/EYq0maZfwr9S9-ETZc3fKXtMW7mT03pdQw.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

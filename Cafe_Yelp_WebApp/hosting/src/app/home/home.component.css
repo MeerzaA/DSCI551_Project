@@ -1,0 +1,22 @@
+.main-content {
+position: relative;
+text-align: center;
+}
+
+img {
+    object-fit: contain;
+    width: 70%;
+    height: 70%;
+    display: block;
+    margin: 0 auto; 
+    z-index: 1;
+}
+.overlay {
+    font-size: 40px;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    z-index: 2;
+}

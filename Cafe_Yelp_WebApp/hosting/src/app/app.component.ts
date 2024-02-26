@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Output, EventEmitter} from '@angular/core';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -15,9 +15,6 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'dsci551proj-cafe-yelp-b8035';
-    sidebarVisible: boolean = false;
-    
-    toggleSidebar() {
-      this.sidebarVisible = !this.sidebarVisible;
+
   }
-}
+

@@ -1,20 +1,24 @@
 import { Component } from '@angular/core';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { EventEmitter, Output } from '@angular/core';
+import { EventEmitter, Input, Output } from '@angular/core';
 
 
 @Component({
   selector: 'app-header',
-  standalone: true,
-  imports: [],
+  //standalone: true,
+  //imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css',
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  styleUrl: './header.component.css'
+  //schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HeaderComponent {
-  @Output() toggleSidebar = new EventEmitter<boolean>(); 
+  @Input() sidebarVisible: boolean = false;
+  @Output() toggleSidebar = new EventEmitter(); 
   onToggleSidebar() {
-    this.toggleSidebar.emit(true);
+    this.sidebarVisible = !this.sidebarVisible;
+    this.toggleSidebar.emit();
+    //console.log('OnToggle Sidebar Visible:', this.sidebarVisible);
+
   }
 }
 

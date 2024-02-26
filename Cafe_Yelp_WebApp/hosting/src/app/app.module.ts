@@ -7,12 +7,12 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { LayoutComponent } from './layout/layout.component';
+import { ContentComponent } from './content/content.component';
 
 /*Primeng sidebar*/
 import { SidebarModule } from 'primeng/sidebar';
 import { BrowserModule } from '@angular/platform-browser';
-
-
 
 import { AppComponent } from './app.component';
 
@@ -28,7 +28,9 @@ import { AppComponent } from './app.component';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SidebarComponent
+    SidebarComponent,
+    LayoutComponent,
+    ContentComponent
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
