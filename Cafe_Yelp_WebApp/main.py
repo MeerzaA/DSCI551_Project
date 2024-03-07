@@ -17,5 +17,5 @@ firebase_admin.initialize_app(cred, {
 ref = db.reference('/business')
 #print(ref.get())
 
-print(json.dumps(ref.get(), indent=4))
 
+    
