@@ -2,6 +2,8 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
 
+import axios from 'axios'; // Install this library using npm/yarn
+
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
 
@@ -41,4 +43,29 @@ export const database = getDatabase(app);
 //  console.log(usersData);
 //});
 
+
+// Using curl commands in TS
+
+const ENDPOINT = 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_1/-0epFLgYq2C1Jo_W4FOBKw.json';
+
+async function fetchDataFromFirebase(): Promise<string> {
+  try {
+    const response = await axios.get(ENDPOINT); // Await the response
+    const data = response.data;
+    console.log('Firebase data loaded:', data);
+    return JSON.stringify(data); // Assuming you want to display the data as a string
+  } catch (error: any) {
+    console.error('Fetch failed', error.message);
+    return ''; // Return an empty string or handle the error appropriately
+  }
+}
+
+// Call the async function within an async context
+(async () => {
+  const retrievedData: string = await fetchDataFromFirebase();
+  const dataContainer = document.getElementById('data-container');
+  if (dataContainer) {
+    dataContainer.textContent = retrievedData;
+  }
+})();
 
