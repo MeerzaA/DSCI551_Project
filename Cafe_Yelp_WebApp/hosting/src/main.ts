@@ -48,11 +48,11 @@ export const database = getDatabase(app);
 
 const ENDPOINT = {
 
-  1 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_1.json',
-  2 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_2.json',
-  3 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_3.json',
-  4 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_4.json',
-  5 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_5.json'
+  0 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_1.json',
+  1 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_2.json',
+  2 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_3.json',
+  3 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_4.json',
+  4 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_5.json'
   
 }
 
@@ -61,7 +61,7 @@ const ENDPOINT = {
 async function fetchBusinessName(businessName: string): Promise<string> {
   try {
 
-    const url = `${ENDPOINT[1]}?orderBy="name"&equalTo="${businessName}"`;
+    const url = `${ENDPOINT[0]}?orderBy="name"&equalTo="${businessName}"`;
 
     const response = await axios.get(url); // Await the response
     const data = response.data;
@@ -87,7 +87,7 @@ const nameSearch = 'Our House Cafe';
 async function fetchBusinessZip(businessZip: string): Promise<string> {
   try {
 
-    const url = `${ENDPOINT[1]}?orderBy="postal_code"&equalTo="${businessZip}"`;
+    const url = `${ENDPOINT[0]}?orderBy="postal_code"&equalTo="${businessZip}"`;
 
     const response = await axios.get(url); // Await the response
     const data = response.data;
@@ -113,7 +113,7 @@ const ZipSearch = '46038';
 async function fetchBusinessAddress(businessAddress: string): Promise<string> {
   try {
 
-    const url = `${ENDPOINT[1]}?orderBy="address"&equalTo="${businessAddress}"`;
+    const url = `${ENDPOINT[0]}?orderBy="address"&equalTo="${businessAddress}"`;
 
     const response = await axios.get(url); // Await the response
     const data = response.data;
