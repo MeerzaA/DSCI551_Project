@@ -46,92 +46,95 @@ export const database = getDatabase(app);
 
 // Using curl commands in TS
 
-const ENDPOINT = {
-
-  0 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_1.json',
-  1 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_2.json',
-  2 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_3.json',
-  3 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_4.json',
-  4 : 'https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com/business_5.json'
-  
-}
+const ENDPOINT = [
+  'https://dsci-studyyelp-1-default-rtdb.firebaseio.com/spots.json',
+  'https://dsci-studyyelp-2-default-rtdb.firebaseio.com/spots.json'  
+];
 
 
 // search by name
-async function fetchBusinessName(businessName: string): Promise<string> {
-  try {
+async function fetchBusinessName(businessName: string): Promise<string[]> {
+  const results: string[] = [];
+  for (let dbIndex = 0; dbIndex < ENDPOINT.length; dbIndex++) {
+    try {
+      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${businessName}"`;
 
-    const url = `${ENDPOINT[0]}?orderBy="name"&equalTo="${businessName}"`;
-
-    const response = await axios.get(url); // Await the response
-    const data = response.data;
-    console.log('Firebase data loaded:', data);
-    return JSON.stringify(data); 
-  } catch (error: any) {
-    console.error('Fetch failed', error.message);
-    return ''; // empty string error 
+      const response = await axios.get(url); // Await the response
+      const data = response.data;
+      console.log(`Firebase data loaded from database ${dbIndex}:`, data);
+      results.push(JSON.stringify(data));
+    } catch (error: any) {
+      console.error('Fetch failed', error.message);
+    }
   }
+  return results; // return array of results
 }
 
 // Call the async function within an async context
 const nameSearch = 'Our House Cafe';
 (async () => {
-  const retrievedData: string = await fetchBusinessName(nameSearch);
+  const retrievedData: string[] = await fetchBusinessName(nameSearch);
   const dataContainer = document.getElementById('data-container');
   if (dataContainer) {
-    dataContainer.textContent = retrievedData;
+    dataContainer.textContent = retrievedData.join('\n');
   }
 })();
 
+
 // search by zip
-async function fetchBusinessZip(businessZip: string): Promise<string> {
-  try {
+async function fetchBusinessZip(businessZip: string): Promise<string[]> {
+  const results: string[] = [];
+  for (let dbIndex = 0; dbIndex < ENDPOINT.length; dbIndex++) {
+    try {
+      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${businessZip}"`;
 
-    const url = `${ENDPOINT[0]}?orderBy="postal_code"&equalTo="${businessZip}"`;
-
-    const response = await axios.get(url); // Await the response
-    const data = response.data;
-    console.log('Firebase data loaded:', data);
-    return JSON.stringify(data); 
-  } catch (error: any) {
-    console.error('Fetch failed', error.message);
-    return ''; // empty string error 
+      const response = await axios.get(url); // Await the response
+      const data = response.data;
+      console.log(`Firebase data loaded from database ${dbIndex}:`, data);
+      results.push(JSON.stringify(data));
+    } catch (error: any) {
+      console.error('Fetch failed', error.message);
+    }
   }
+  return results; // return array of results
 }
 
 // Call the async function within an async context
 const ZipSearch = '46038';
 (async () => {
-  const retrievedData: string = await fetchBusinessZip(ZipSearch);
+  const retrievedData: string[] = await fetchBusinessName(ZipSearch);
   const dataContainer = document.getElementById('data-container');
   if (dataContainer) {
-    dataContainer.textContent = retrievedData;
+    dataContainer.textContent = retrievedData.join('\n');
   }
 })();
 
 // search by address
-async function fetchBusinessAddress(businessAddress: string): Promise<string> {
-  try {
+async function fetchBusinessAddress(businessAddress: string): Promise<string[]> {
+  const results: string[] = [];
+  for (let dbIndex = 0; dbIndex < ENDPOINT.length; dbIndex++) {
+    try {
+      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${businessAddress}"`;
 
-    const url = `${ENDPOINT[0]}?orderBy="address"&equalTo="${businessAddress}"`;
-
-    const response = await axios.get(url); // Await the response
-    const data = response.data;
-    console.log('Firebase data loaded:', data);
-    return JSON.stringify(data); 
-  } catch (error: any) {
-    console.error('Fetch failed', error.message);
-    return ''; // empty string error 
+      const response = await axios.get(url); // Await the response
+      const data = response.data;
+      console.log(`Firebase data loaded from database ${dbIndex}:`, data);
+      results.push(JSON.stringify(data));
+    } catch (error: any) {
+      console.error('Fetch failed', error.message);
+    }
   }
+  return results; // return array of results
 }
 
 // Call the async function within an async context
 const addresSearch = '11850 Allisonville Rd';
 (async () => {
-  const retrievedData: string = await fetchBusinessAddress(addresSearch);
+  const retrievedData: string[] = await fetchBusinessName(addresSearch);
   const dataContainer = document.getElementById('data-container');
   if (dataContainer) {
-    dataContainer.textContent = retrievedData;
+    dataContainer.textContent = retrievedData.join('\n');
   }
 })();
+
 
