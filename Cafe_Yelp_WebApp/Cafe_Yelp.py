@@ -139,6 +139,26 @@ def search_study_spots_by_distance(origin_location, max_distance_km):
             print(f"Failed to retrieve study spots from {db_url}. Status code: {response.status_code}")
     return matching_spots
 
+def modify_study_spot(spot_id, new_spot_data):
+    for db_url in DATABASE_URLS.values():
+        response = requests.put(f"{db_url}/spots/{spot_id}.json", data=json.dumps(new_spot_data), headers={'Content-Type': 'application/json'})
+        if response.status_code == 200:
+            print(f"Study spot with ID {spot_id} modified successfully.")
+            return True
+        else:
+            print(f"Failed to modify study spot with ID {spot_id}. Status code: {response.status_code}")
+    return False
+
+def delete_study_spot(spot_id):
+    for db_url in DATABASE_URLS.values():
+        response = requests.delete(f"{db_url}/spots/{spot_id}.json")
+        if response.status_code == 200:
+            print(f"Study spot with ID {spot_id} deleted successfully.")
+            return True
+        else:
+            print(f"Failed to delete study spot with ID {spot_id}. Status code: {response.status_code}")
+    return False
+
 
 
 
@@ -188,3 +208,12 @@ if __name__ == "__main__":
             max_distance_km = float(sys.argv[4])
             study_spots = search_study_spots_by_distance(location, max_distance_km)
             print(study_spots)
+        elif operation == "modify_study_spot":
+            spot_id = sys.argv[2]
+            new_spot_data = json.loads(sys.argv[3])
+            success = modify_study_spot(spot_id, new_spot_data)
+            print("Modification successful." if success else "Modification failed.")
+        elif operation == "delete_study_spot":
+            spot_id = sys.argv[2]
+            success = delete_study_spot(spot_id)
+            print("Deletion successful." if success else "Deletion failed.")
