@@ -23,11 +23,20 @@ export const routes: Routes = [
                 component: HeaderComponent,
                 outlet: 'header'
             },
+
+        ]
+    },
+    
+    {
+        path: 'search',
+        component: ContentComponent,
+        children: [
             {
                 path: '',
-                component: SidebarComponent,
-                outlet: 'sidebar'
-            }
+                component: HeaderComponent,
+                outlet: 'header'
+            },
+
         ]
     }
 ];

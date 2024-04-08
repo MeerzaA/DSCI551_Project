@@ -48,7 +48,7 @@ export const database = getDatabase(app);
 
 const ENDPOINT = [
   'https://dsci-studyyelp-1-default-rtdb.firebaseio.com/spots.json',
-  'https://dsci-studyyelp-2-default-rtdb.firebaseio.com/spots.json'  
+  'https://dsci-studyyelp-2-288ca-default-rtdb.firebaseio.com/spots.json'  
 ];
 
 
@@ -71,14 +71,14 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
 }
 
 // Call the async function within an async context
-const nameSearch = 'Our House Cafe';
+/* const nameSearch = 'Our House Cafe';
 (async () => {
   const retrievedData: string[] = await fetchBusinessName(nameSearch);
   const dataContainer = document.getElementById('data-container');
   if (dataContainer) {
     dataContainer.textContent = retrievedData.join('\n');
   }
-})();
+})(); */
 
 
 // search by zip
@@ -100,14 +100,14 @@ async function fetchBusinessZip(businessZip: string): Promise<string[]> {
 }
 
 // Call the async function within an async context
-const ZipSearch = '46038';
+/*const ZipSearch = '46038';
 (async () => {
-  const retrievedData: string[] = await fetchBusinessName(ZipSearch);
+  const retrievedData: string[] = await fetchBusinessZip(ZipSearch);
   const dataContainer = document.getElementById('data-container');
   if (dataContainer) {
     dataContainer.textContent = retrievedData.join('\n');
   }
-})();
+})();*/
 
 // search by address
 async function fetchBusinessAddress(businessAddress: string): Promise<string[]> {
@@ -128,13 +128,13 @@ async function fetchBusinessAddress(businessAddress: string): Promise<string[]> 
 }
 
 // Call the async function within an async context
-const addresSearch = '11850 Allisonville Rd';
+/*const addresSearch = '11850 Allisonville Rd';
 (async () => {
   const retrievedData: string[] = await fetchBusinessName(addresSearch);
   const dataContainer = document.getElementById('data-container');
   if (dataContainer) {
     dataContainer.textContent = retrievedData.join('\n');
   }
-})();
+})(); */
 
 

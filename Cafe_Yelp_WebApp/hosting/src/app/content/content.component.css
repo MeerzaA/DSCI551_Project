@@ -1,0 +1,36 @@
+.wrapper {
+    position: fixed;
+    background-color: #bad0ae;
+    height: 100vh; 
+    width: 100%;    
+    top: 0px; 
+    z-index:-1;
+}
+
+
+.home-container {
+    flex: 1; 
+    background-color: #bad0ae;
+    text-align: center;
+    padding: 0px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    color: white; 
+    height: 100%
+}
+
+.content-space {
+    position: fixed;
+    top: 100px;
+    left:100px;
+
+}
+.business-card {
+    background-color: #597c47;
+    width: 600px;
+    height: 300px;
+    padding: 20px;
+    margin-top: 20px;
+
+}

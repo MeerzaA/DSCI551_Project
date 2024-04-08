@@ -13,11 +13,5 @@ import { CommonModule} from '@angular/common';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class LayoutComponent {
-  sidebarVisible: boolean = false;
-  @Output() toggleSidebarEvent = new EventEmitter();
 
-  toggleSidebar() {
-    console.log('Sidebar Visible:');
-    this.sidebarVisible = !this.sidebarVisible;
-  }
 }
