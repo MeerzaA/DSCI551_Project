@@ -1,19 +1,17 @@
+ 
+<html>
 <div class="wrapper"></div>
-<div class="header-container">  
-    <router-outlet name="header"></router-outlet>
-</div>
-<div class="content-space">
-    <p>Showing Results for: {{ businessZip }}</p>
-    <div class="business-card"> 
-        <div *ngIf="businessZip">
-            <p>{{ retrievedData[0].name}}</p>
-            <p>Stars: {{ retrievedData[0].stars}}</p>
-            <p>{{ retrievedData[0].address}}, {{ retrievedData[0].city}}, {{ retrievedData[0].state}}, {{ retrievedData[0].postal_code}}</p>
-            <p>Hours:</p>
-            <p>Friday: {{retrievedData[0].hours.Friday}}</p>
-        </div>
+    <div class="header-container">  
+        <router-outlet name="header"></router-outlet>
     </div>
+<body>
+    <div class="content-space">
+        <!--include button for zip or name and then run the corresponding function-->
+        <p>Showing {{ retrievedData.length }} Results for: {{ businessZip }}</p>
+            <div *ngIf="businessZip">
+                <div id="businesses"></div>
+            </div>
+        </div>
 
-</div>
-
-
+</body>
+</html>

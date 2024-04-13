@@ -22,9 +22,11 @@
 
 .content-space {
     position: fixed;
+    overflow-y: scroll;
     top: 100px;
     left:100px;
-
+    width: calc(100%);
+    height: calc(100vh - 150px); 
 }
 .business-card {
     background-color: #597c47;
