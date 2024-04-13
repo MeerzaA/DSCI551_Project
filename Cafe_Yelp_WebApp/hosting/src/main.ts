@@ -114,7 +114,7 @@ async function fetchBusinessAddress(businessAddress: string): Promise<string[]> 
   const results: string[] = [];
   for (let dbIndex = 0; dbIndex < ENDPOINT.length; dbIndex++) {
     try {
-      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${businessAddress}"`;
+      const url = `${ENDPOINT[dbIndex]}?orderBy="address"&equalTo="${businessAddress}"`;
 
       const response = await axios.get(url); // Await the response
       const data = response.data;
