@@ -7,8 +7,12 @@
 <body>
     <div class="content-space">
         <!--include button for zip or name and then run the corresponding function-->
-        <p>Showing {{ retrievedData.length }} Results for: {{ businessZip }}</p>
             <div *ngIf="businessZip">
+                <p>Showing {{ retrievedData.length }} Results for: {{ businessZip }}</p>
+                <div id="businesses"></div>
+            </div>
+            <div *ngIf="businessName">
+                <p>Showing {{ retrievedData.length }} Results for: {{ businessName }}</p>
                 <div id="businesses"></div>
             </div>
         </div>
