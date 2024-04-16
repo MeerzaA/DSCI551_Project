@@ -33,6 +33,39 @@ def add_study_spot(spot_data):
     # RETURN: status code after python REST call to add study spot [response.status_code]
     # EXPECTED RETURN: 200
     # Generate a new UUID for the spot ID
+    '''
+    COPY THE ID FOR LATER CODE
+
+    python3 main.py add_study_spot '{
+    "name": "LA Study Haven",
+    "address": "456 Elm St",
+    "city": "Los Angeles",
+    "state": "CA",
+    "postal_code": "90001",
+    "latitude": 34.0522,
+    "longitude": -118.2437,
+    "stars": 5,
+    "review_count": 20,
+    "attributes": {
+        "WiFi": "Free",
+        "NoiseLevel": "Quiet",
+        "OutdoorSeating": "Yes"
+    },
+    "categories": [
+        "Coffee & Tea",
+        "Library"
+    ],
+    "hours": {
+        "Monday": "8:00-20:00",
+        "Tuesday": "8:00-20:00",
+        "Wednesday": "8:00-20:00",
+        "Thursday": "8:00-20:00",
+        "Friday": "8:00-20:00",
+        "Saturday": "9:00-17:00",
+        "Sunday": "10:00-16:00"
+    }
+}'
+    '''
     spot_id = str(uuid.uuid4())
     # Add the spot ID to the spot data
     spot_data["spot_id"] = spot_id
@@ -63,6 +96,10 @@ def add_study_spot(spot_data):
     return status_code
     
 def search_study_spots_by_city(city):
+    '''
+    python3 main.py search_study_spots_by_city 'Los Angeles'
+    python3 main.py search_study_spots_by_city 'Indianapolis'
+    '''
     matching_spots = {}
     for db_url in DATABASE_URLS.values():
         response = requests.get(db_url + f"/spots.json?orderBy=\"city\"&equalTo=\"{city}\"")
@@ -77,6 +114,11 @@ def search_study_spots_by_city(city):
     return matching_spots
 
 def search_study_spot_by_id(spot_id):
+    '''
+    python3 main.py search_study_spot_by_id '-WY14B9U3ys08E9PwKOB8g'
+    python3 main.py search_study_spot_by_id 
+
+    '''
     # INPUT: ID of the study spot
     # RETURN: JSON object containing the information of the study spot with the given ID [spot_data]
     for db_url in DATABASE_URLS.values():
@@ -89,6 +131,10 @@ def search_study_spot_by_id(spot_id):
     return None
 
 def search_study_spots_by_postal_code(postal_code):
+    '''
+    python3 main.py search_study_spots_by_postal_code '46219'
+    python3 main.py search_study_spots_by_postal_code '90001'
+    '''
     matching_spots = {}
     for db_url in DATABASE_URLS.values():
         response = requests.get(db_url + f"/spots.json?orderBy=\"postal_code\"&equalTo=\"{postal_code}\"")
@@ -103,6 +149,10 @@ def search_study_spots_by_postal_code(postal_code):
     return matching_spots
 
 def search_study_spots_by_state(state):
+    '''
+    python3 main.py search_study_spots_by_state 'CA'
+    python3 main.py search_study_spots_by_state 'IN'
+    '''
     matching_spots = {}
     for db_url in DATABASE_URLS.values():
         response = requests.get(db_url + f"/spots.json?orderBy=\"state\"&equalTo=\"{state}\"")
@@ -121,6 +171,10 @@ def calculate_distance(coord1, coord2):
     return geodesic(coord1, coord2).kilometers
 
 def search_study_spots_by_distance(origin_location, max_distance_km):
+    '''
+    python3 main.py search_study_spots_by_distance 39.780987 -86.90468924 50
+    python3 main.py search_study_spots_by_distance 27.9598673716 -82.5062573701 10
+    '''
     matching_spots = {}
     for db_url in DATABASE_URLS.values():
         response = requests.get(db_url + "/spots.json")
@@ -140,6 +194,38 @@ def search_study_spots_by_distance(origin_location, max_distance_km):
     return matching_spots
 
 def modify_study_spot(spot_id, new_spot_data):
+    '''
+    python3 main.py modify_study_spot '33d95f8b-c4d7-4754-8f78-c2a8efd73a74' '{
+    "name": "Modified Study Spot",
+    "address": "456 Elm St",
+    "city": "San Jose",
+    "state": "CA",
+    "postal_code": "95112",
+    "latitude": 37.3382,
+    "longitude": -121.8863,
+    "stars": 5,
+    "review_count": 20,
+    "attributes": {
+        "WiFi": "Free",
+        "NoiseLevel": "Quiet",
+        "OutdoorSeating": "No"
+    },
+    "categories": [
+        "Coffee & Tea",
+        "Library"
+    ],
+    "hours": {
+        "Monday": "9:00-18:00",
+        "Tuesday": "9:00-18:00",
+        "Wednesday": "9:00-18:00",
+        "Thursday": "9:00-18:00",
+        "Friday": "9:00-18:00",
+        "Saturday": "10:00-16:00",
+        "Sunday": "Closed"
+    }
+}'
+
+    '''
     for db_url in DATABASE_URLS.values():
         response = requests.put(f"{db_url}/spots/{spot_id}.json", data=json.dumps(new_spot_data), headers={'Content-Type': 'application/json'})
         if response.status_code == 200:
@@ -150,6 +236,9 @@ def modify_study_spot(spot_id, new_spot_data):
     return False
 
 def delete_study_spot(spot_id):
+    '''
+    python3 main.py delete_study_spot '33d95f8b-c4d7-4754-8f78-c2a8efd73a74'
+    '''
     for db_url in DATABASE_URLS.values():
         response = requests.delete(f"{db_url}/spots/{spot_id}.json")
         if response.status_code == 200:
