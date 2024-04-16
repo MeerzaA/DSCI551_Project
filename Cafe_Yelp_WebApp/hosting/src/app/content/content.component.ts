@@ -248,6 +248,7 @@ export class ContentComponent implements OnInit {
   showOnlyDogFriendly: boolean = false;
   showOnlyOutdoorSeat: boolean = false;
   BusinessLength: number = 0
+  search_string: string = 'hold'
   //option for quiet,avg,loud noise level
 
 
@@ -260,6 +261,7 @@ export class ContentComponent implements OnInit {
     this.businessName = history.state.businessName;
 
     if (this.businessZip) {
+      this.search_string = this.businessZip;
       fetchBusinessZip(this.businessZip).then((data: any) => {
         this.retrievedData = data;
         //console.log('ngOnInit:', this.retrievedData);
@@ -267,6 +269,7 @@ export class ContentComponent implements OnInit {
       });
     }
     else if (this.businessName) {
+      this.search_string = this.businessName;
       fetchBusinessName(this.businessName).then((data: any) => {
         this.retrievedData = data;
         //console.log('ngOnInit:', this.retrievedData);
@@ -285,27 +288,27 @@ export class ContentComponent implements OnInit {
         return each_business.attributes && (each_business.attributes.WiFi == "free" || each_business.attributes.WiFi == "'free'");
       });
       //console.log("filter:", filtered)
-      addCard(filtered, this.businessZip!);}
+      addCard(filtered, this.search_string!);}
     if (this.showOnlyGroupFriendly) {
       filtered = filtered.filter((each_business) => {
         return each_business.attributes && each_business.attributes.RestaurantsGoodForGroups=="True";
       });
       //console.log("filter:", filtered)
-      addCard(filtered, this.businessZip!);}
+      addCard(filtered, this.search_string!);}
     if (this.showOnlyDogFriendly) {
       filtered = filtered.filter((each_business) => {
         return each_business.attributes && each_business.attributes.DogsAllowed=="True";
       });
       //console.log("filter:", filtered)
-      addCard(filtered, this.businessZip!);}
+      addCard(filtered, this.search_string!);}
     if (this.showOnlyOutdoorSeat) {
       filtered = filtered.filter((each_business) => {
         return each_business.attributes && each_business.attributes.OutdoorSeating=="True";
       });
       //console.log("filter:", filtered)
-      addCard(filtered, this.businessZip!);}
+      addCard(filtered, this.search_string!);}
    else {
-      addCard(filtered, this.businessZip!)
+      addCard(filtered, this.search_string!)
 
     }
   }
