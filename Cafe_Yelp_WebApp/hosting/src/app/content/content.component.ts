@@ -5,12 +5,18 @@ import { CommonModule} from '@angular/common';
 import { ActivatedRoute,Router, Params } from '@angular/router';
 import axios from 'axios';
 import 'bootstrap';
+import * as turf from "@turf/turf";
+
+
 
 
 const ENDPOINT = [
   'https://dsci-studyyelp-1-default-rtdb.firebaseio.com/spots.json',
   'https://dsci-studyyelp-2-288ca-default-rtdb.firebaseio.com/spots.json'  
 ];
+
+
+
 async function fetchBusinessZip(businessZip: string): Promise<string[]> {
   const results: string[] = [];
   for (let dbIndex = 0; dbIndex < ENDPOINT.length; dbIndex++) {
@@ -50,6 +56,33 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
   return results; // return array of results
 }
 
+
+//Calculate how far a business it
+function calcDist(coord1: number[], coord2: number[]): number {
+  const options = { units: 'miles' } as { units?: turf.Units | undefined };
+  const distance = turf.distance(turf.point(coord1), turf.point(coord2), options);
+  console.log("Distance:", distance, "miles");
+
+  return distance;
+
+}
+
+//trying to get surrounding zipcodes
+/*function SurroundingZips(zip: string | number): number[] {
+  if string:
+    const businessZipInt: number = parseInt(businessZip);
+  cnt=1
+  Ziplist number[] = [zip]
+  For (i<=100) {
+    Ziplist.push(zipcode+i)
+    Ziplist.push(zipcode-i) 
+    
+    Count++;
+  }
+  return Ziplist
+}*/
+
+//display rating as stars
 function showStar(rating: number): string {
   let starsHTML = '';
   //Only show number of stars that correspond to rating
@@ -73,20 +106,25 @@ function showStar(rating: number): string {
   return starsHTML;
 }
 
-function addCard(retrievedData: any[]): void {
-  const businessCardsContainer = document.getElementById("businesses");
+//https://www.codeproject.com/Questions/1156482/How-to-make-dynamic-list-in-HTML
+//https://stackoverflow.com/questions/53867808/dynamic-table-with-typescript-and-html
+//https://www.youtube.com/watch?v=f-Chl4CVlTs
+//https://dev.to/hcoco1/javascript-dynamic-list-the-dom-manipulation-10c5
 
-  if (businessCardsContainer && retrievedData && Array.isArray(retrievedData)) {
-      retrievedData.forEach((item: any) => { // Arrow function here
+//adding attributes to business card
+function addCard(retrievedData: any[], search_entry: string): void {
+  const businessCardsContainer = document.getElementById("businesses");
+  if (businessCardsContainer && retrievedData) {
+    businessCardsContainer.innerHTML = `<p>Showing ${retrievedData.length } Results for: ${search_entry}</p>`;
+
+
+      retrievedData.forEach((item: any) => { 
           const businessCard = document.createElement("div");
           businessCard.className = "business-card";
-          /*businessCard.innerHTML = `
-              <p>${item.name}</p>
-              <p>Stars: ${item.stars}</p>
-              <p>${item.address}, ${item.city}, ${item.state}, ${item.postal_code}</p>
-              <p>Friday: ${item.hours.Friday}</p>
-          `;*/
-          //CSS is not working for these
+
+
+
+          //CSS is not working for these so i have to include here
           businessCard.style.backgroundColor = "#597c47";
           businessCard.style.width = "600px";
           businessCard.style.height = "800px";
@@ -94,9 +132,10 @@ function addCard(retrievedData: any[]): void {
           businessCard.style.marginTop = "20px";
 
           let cardContent = `<p style="font-size: 40px;">${item.name}</p>`;
-          
+
+          //check if attributes are available and then add to business card
           if (item.stars) {
-            cardContent += `<p> Rating: ${showStar(item.stars)}, ${item.stars} </p>`;
+            cardContent += `<p> Rating: ${showStar(item.stars)} </p>`;
           }
           if (item.address && item.city && item.state && item.postal_code) {
             cardContent += `<p style="font-size: 20px;">${item.address}, ${item.city}, ${item.state}, ${item.postal_code}</p>`;
@@ -106,7 +145,18 @@ function addCard(retrievedData: any[]): void {
               cardContent += `<p>Bike Parking: ${item.attributes.BikeParking}</p>`;}
             //If true, display what type of parking is available
             if (item.attributes.BusinessParking) {
-              cardContent += `<p>Business Parking: ${item.attributes.BusinessParking}</p>`;}
+              cardContent += "<p>Available Parking:</p>"
+              if (item.attributes.BusinessParking.garage === true) {
+                cardContent += "<p>Garage</p>";}
+              if (item.attributes.BusinessParking.lot === true) {
+                cardContent += "<p>Lot</p>";}
+              if (item.attributes.BusinessParking.street === true) {
+                cardContent += "<p>Street</p>";}
+              if (item.attributes.BusinessParking.valet === true) {
+                cardContent += "<p>Valet</p>";}
+              if (item.attributes.BusinessParking.validated === true) {
+                    cardContent += "<p>Validated</p>";}
+              }
             if (item.attributes.DogsAllowed) {
               cardContent += `<p>Dog Friendly: ${item.attributes.DogsAllowed}</p>`;}
             if (item.attributes.NoiseLevel) {
@@ -155,16 +205,15 @@ function addCard(retrievedData: any[]): void {
             <div class="card card-body">`;
             cardContent += `<p> ${item.reviews.text} </p>`;
           }
-
           businessCard.innerHTML = cardContent;
 
           businessCardsContainer.appendChild(businessCard);
       });
+
   } else {
       console.error("retrievedData is not available or not an array.");
   }
 }
-
 
 
 
@@ -193,6 +242,15 @@ export class ContentComponent implements OnInit {
   businessZip: string | null = null;
   businessName: string | null = null;
   retrievedData: any[] = [];
+  filteredData: any[] = [];
+  showOnlyWiFi: boolean = false;
+  showOnlyGroupFriendly: boolean = false;
+  showOnlyDogFriendly: boolean = false;
+  showOnlyOutdoorSeat: boolean = false;
+  BusinessLength: number = 0
+  //option for quiet,avg,loud noise level
+
+
 
   constructor(private route: ActivatedRoute,private router: Router) {}
   
@@ -204,17 +262,96 @@ export class ContentComponent implements OnInit {
     if (this.businessZip) {
       fetchBusinessZip(this.businessZip).then((data: any) => {
         this.retrievedData = data;
-        console.log('ngOnInit:', this.retrievedData);
-        addCard(this.retrievedData);
+        //console.log('ngOnInit:', this.retrievedData);
+        addCard(this.retrievedData, this.businessZip!);
       });
     }
     else if (this.businessName) {
       fetchBusinessName(this.businessName).then((data: any) => {
         this.retrievedData = data;
-        console.log('ngOnInit:', this.retrievedData);
-        addCard(this.retrievedData);
+        //console.log('ngOnInit:', this.retrievedData);
+        addCard(this.retrievedData, this.businessName!);
       });
     }
   }
+    //filter businesses based on attributes
+    //https://blog.logrocket.com/filtering-typescript-value-types/
+
+  filterBusinesses(): void {
+    let filtered = this.retrievedData;
+
+    if (this.showOnlyWiFi) {
+      filtered = filtered.filter((each_business) => {
+        return each_business.attributes && (each_business.attributes.WiFi == "free" || each_business.attributes.WiFi == "'free'");
+      });
+      //console.log("filter:", filtered)
+      addCard(filtered, this.businessZip!);}
+    if (this.showOnlyGroupFriendly) {
+      filtered = filtered.filter((each_business) => {
+        return each_business.attributes && each_business.attributes.RestaurantsGoodForGroups=="True";
+      });
+      //console.log("filter:", filtered)
+      addCard(filtered, this.businessZip!);}
+    if (this.showOnlyDogFriendly) {
+      filtered = filtered.filter((each_business) => {
+        return each_business.attributes && each_business.attributes.DogsAllowed=="True";
+      });
+      //console.log("filter:", filtered)
+      addCard(filtered, this.businessZip!);}
+    if (this.showOnlyOutdoorSeat) {
+      filtered = filtered.filter((each_business) => {
+        return each_business.attributes && each_business.attributes.OutdoorSeating=="True";
+      });
+      //console.log("filter:", filtered)
+      addCard(filtered, this.businessZip!);}
+   else {
+      addCard(filtered, this.businessZip!)
+
+    }
+  }
+
+  //https://www.w3schools.com/howto/howto_js_display_checkbox_text.asp
+  handleWiFiCheckboxChange(event: Event): void {
+    const checkbox = event.target as HTMLInputElement;
+    if (checkbox && checkbox.checked){
+      console.log(checkbox.value, "True")
+      this.showOnlyWiFi = true;}
+    else{
+        console.log(checkbox?.value, "False")
+        this.showOnlyWiFi = false;}
+    this.filterBusinesses();
+  }
+
+  handleGroupFriendlyCheckboxChange(event: Event): void {
+    const checkbox = event.target as HTMLInputElement;
+    if (checkbox && checkbox.checked){
+      console.log(checkbox.value, "True")
+      this.showOnlyGroupFriendly = true;}
+    else{
+        console.log(checkbox?.value, "False")
+        this.showOnlyGroupFriendly = false;}
+    this.filterBusinesses();
+  }
+  handleDogFriendlyCheckboxChange(event: Event): void {
+    const checkbox = event.target as HTMLInputElement;
+    if (checkbox && checkbox.checked){
+      console.log(checkbox.value, "True")
+      this.showOnlyDogFriendly = true;}
+    else{
+        console.log(checkbox?.value, "False")
+        this.showOnlyDogFriendly = false;}
+    this.filterBusinesses();
+  }
+  handleOutdoorSeatCheckboxChange(event: Event): void {
+    const checkbox = event.target as HTMLInputElement;
+    if (checkbox && checkbox.checked){
+      console.log(checkbox.value, "True")
+      this.showOnlyOutdoorSeat = true;}
+    else{
+        console.log(checkbox?.value, "False")
+        this.showOnlyOutdoorSeat = false;}
+    this.filterBusinesses();
+  }
+
 
 }

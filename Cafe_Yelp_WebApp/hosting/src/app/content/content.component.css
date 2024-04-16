@@ -23,10 +23,22 @@
 .content-space {
     position: fixed;
     overflow-y: scroll;
-    top: 100px;
+    top: 150px;
     left:100px;
     width: calc(100%);
     height: calc(100vh - 150px); 
+}
+#vis {
+    position: fixed;
+    background-color: white;
+    /*color: white;*/
+    top: 90px;
+    left:100px;
+    width: 500px;
+    height: 40px; 
+}
+.spacer {
+    margin-left: 10px; /* Adjust the value as needed */
 }
 .business-card {
     background-color: #597c47;
