@@ -10,12 +10,7 @@
         <router-outlet name="header"></router-outlet>
     </div>
 
-    <!--div class="attribute-select">
-        <div *ngFor="let attribute of attributes">
-            <input type="checkbox" (change)="toggleAttributeSelection(attribute)">
-            <label>{{ attribute }}</label>
-          </div>
-    </div-->
+
     <div class="content-space">
         <div id="vis">
             <!--https://d3-graph-gallery.com/graph/interactivity_button.html-->
@@ -38,13 +33,15 @@
         
 
         <!--include button for zip or name and then run the corresponding function-->
-            <div *ngIf="businessZip">
-                <div id="businesses"></div>
-            </div>
-            <div *ngIf="businessName">
-                <div id="businesses"></div>
-            </div>
+        <div *ngIf="businessZip">
+            <div id="result-count"></div>
+            <div id="businesses"></div>
         </div>
+        <div *ngIf="businessName">
+            <div id="result-count"></div>
+            <div id="businesses"></div>
+        </div>
+    </div>
 
 
 

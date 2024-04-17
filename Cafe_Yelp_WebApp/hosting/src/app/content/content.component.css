@@ -24,7 +24,7 @@
     position: fixed;
     overflow-y: scroll;
     top: 150px;
-    left:100px;
+    left:50px;
     width: calc(100%);
     height: calc(100vh - 150px); 
 }
@@ -44,7 +44,19 @@
     background-color: #597c47;
     width: 600px;
     height: 300px;
-    padding: 20px;
+    padding: 50px;
     margin-top: 20px;
+
+}
+/*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+#businesses {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 50px;
+}
+#result-count {
+    color: black; 
 
 }

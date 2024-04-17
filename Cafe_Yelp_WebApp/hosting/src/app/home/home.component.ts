@@ -24,6 +24,36 @@ export class HomeComponent {
   constructor(private router: Router) {}
   city: string = ''; 
   state: string = ''; 
+
+  //https://gist.github.com/tleen/6299431
+  stateNames: string[] = [
+    'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
+    'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas',
+    'Kentucky', 'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 
+    'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 
+    'New Mexico', 'New York', 'North Carolina', 'North Dakota', 'Ohio', 'Oklahoma', 'Oregon',
+    'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 
+    'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
+
+  //state list
+  addStateList(stateNames: any[]): void {
+
+
+    const StateContainer = document.getElementById("states");
+    if (StateContainer) {
+      StateContainer.innerHTML = " ";
+
+
+      stateNames.forEach((item: any) => { 
+          const state_option = document.createElement("option");
+
+
+      StateContainer.appendChild(state_option);})
+
+      }
+  }
+  
+  
   onSearchZip(businessZip: string) {
     if (businessZip) {
       this.router.navigate(['/search'], { state: { businessZip: businessZip } });    
