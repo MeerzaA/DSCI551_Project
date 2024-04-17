@@ -11,6 +11,8 @@ const ENDPOINT = [
   'https://dsci-studyyelp-1-default-rtdb.firebaseio.com/spots.json',
   'https://dsci-studyyelp-2-288ca-default-rtdb.firebaseio.com/spots.json'  
 ];
+
+
 async function fetchBusinessZip(businessZip: string): Promise<string[]> {
   const results: string[] = [];
   for (let dbIndex = 0; dbIndex < ENDPOINT.length; dbIndex++) {
@@ -35,7 +37,10 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
   for (let dbIndex = 0; dbIndex < ENDPOINT.length; dbIndex++) {
     try {
       //find a way to change to include (first 3-4 characters)
-      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${businessName}"`;
+
+      const truncatedName = businessName.substring(0, 7);
+
+      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${truncatedName}"`;
 
       const response = await axios.get(url); // Await the response
       const data = response.data;
@@ -49,6 +54,7 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
   }
   return results; // return array of results
 }
+
 
 function showStar(rating: number): string {
   let starsHTML = '';
