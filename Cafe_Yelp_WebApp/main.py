@@ -185,7 +185,7 @@ if __name__ == "__main__":
     else:
         operation = sys.argv[1].lower()
         if operation == "add_study_spot":
-            result = add_study_spot(json.loads(sys.argv[2]))
+            result = add_study_spot(json.loads(sys.argv[3]))
             print(result)
         elif operation == "search_study_spots_by_city":
             city = sys.argv[2]
