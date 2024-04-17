@@ -14,7 +14,8 @@ export const routes: Routes = [
         component: LayoutComponent,
         children: [
             {
-                path: 'https://dsci551proj-cafe-yelp-b8035.web.app/home',
+                path: '',
+                //path: 'https://dsci551proj-cafe-yelp-b8035.web.app/home',
                 component: HomeComponent,
                 outlet: 'homecomp'
             },
