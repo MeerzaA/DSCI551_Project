@@ -16,7 +16,10 @@ const ENDPOINT = [
 ];
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> e3a172bdfb8d97943d9a1c00a7990fc456fc9c7b
 async function fetchBusinessZip(businessZip: string): Promise<string[]> {
   const results: string[] = [];
   for (let dbIndex = 0; dbIndex < ENDPOINT.length; dbIndex++) {
@@ -41,7 +44,10 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
   for (let dbIndex = 0; dbIndex < ENDPOINT.length; dbIndex++) {
     try {
       //find a way to change to include (first 3-4 characters)
-      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${businessName}"`;
+
+      const truncatedName = businessName.substring(0, 7);
+
+      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${truncatedName}"`;
 
       const response = await axios.get(url); // Await the response
       const data = response.data;
@@ -57,6 +63,8 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
 }
 
 
+<<<<<<< HEAD
+=======
 //Calculate how far a business it
 function calcDist(coord1: number[], coord2: number[]): number {
   const options = { units: 'miles' } as { units?: turf.Units | undefined };
@@ -83,6 +91,7 @@ function calcDist(coord1: number[], coord2: number[]): number {
 }*/
 
 //display rating as stars
+>>>>>>> e3a172bdfb8d97943d9a1c00a7990fc456fc9c7b
 function showStar(rating: number): string {
   let starsHTML = '';
   //Only show number of stars that correspond to rating
