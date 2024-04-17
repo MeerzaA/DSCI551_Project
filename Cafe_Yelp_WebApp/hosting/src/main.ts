@@ -21,11 +21,12 @@ import { child, getDatabase, onValue, ref } from 'firebase/database';
 const firebaseConfig = {
   apiKey: "AIzaSyDfLNVJF4FBY2oUFu33yp30sbL8WjkYwq0",
   authDomain: "dsci551proj-cafe-yelp-b8035.firebaseapp.com",
+  databaseURL: "https://dsci551proj-cafe-yelp-b8035-default-rtdb.firebaseio.com",
   projectId: "dsci551proj-cafe-yelp-b8035",
   storageBucket: "dsci551proj-cafe-yelp-b8035.appspot.com",
   messagingSenderId: "999112911079",
-  appId: "1:999112911079:web:6f074ed141e6af04a15a42",
-  measurementId: "G-9F2HL8N4SF"
+  appId: "1:999112911079:web:7c3ea84a635e33f4a15a42",
+  measurementId: "G-FCJLVYZ6HV"
 };
 
 // Initialize Firebase
@@ -33,15 +34,6 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 export const database = getDatabase(app);
-
-
-//const rootRef = ref(database);
-//const businessRef = child(rootRef, 'business');
-
-//onValue(businessRef, (snapshot) => {
-//  const usersData = snapshot.val();
-//  console.log(usersData);
-//});
 
 
 // Using curl commands in TS

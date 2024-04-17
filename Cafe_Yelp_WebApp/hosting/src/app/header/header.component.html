@@ -1,7 +1,7 @@
 
 <div class= "wrapper">
     <div class="header-container">
-        <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 10.4V20M12 10.4C12 8.15979 12 7.03969 11.564 6.18404C11.1805 5.43139 10.5686 4.81947 9.81596 4.43597C8.96031 
             4 7.84021 4 5.6 4H4.6C4.03995 4 3.75992 4 3.54601 4.10899C3.35785 4.20487 3.20487 4.35785 3.10899 4.54601C3 4.75992 3 5.03995 
             3 5.6V16.4C3 16.9601 3 17.2401 3.10899 17.454C3.20487 17.6422 3.35785 17.7951 3.54601 17.891C3.75992 18 4.03995 18 4.6 
@@ -13,7 +13,7 @@
             13.7908 18.8062L12 20" 
             stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <span (click)="navigateHome()"> STUDY SPACE FINDER</span>
+        <button (click)="navigateHome()" class="button2"> STUDY SPACE FINDER</button>
         <button (click)="toggleSidebar()" class="button">    
             <svg width="40px" height="40px" viewBox="0 0 24 24" fill="#94bb86" xmlns="http://www.w3.org/2000/svg" >
             <path d="M4 6H20M4 12H20M4 18H20" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -21,7 +21,11 @@
         </button>
     </div>
     <div class="sidebar-container" *ngIf="sidebarVisible">
-        <router-outlet name="sidebar"></router-outlet>
+        <!--router-outlet name="sidebar"></router-outlet-->
+        <h1>Menu</h1>
+        <p>Search</p>
+        <p>User Profile</p>
+        <p>About Us</p>
     </div>
 
 </div>

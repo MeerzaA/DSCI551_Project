@@ -7,11 +7,11 @@ import { SidebarModule } from 'primeng/sidebar';
 
 @Component({
   selector: 'app-sidebar',
-  //standalone: true,
-  //imports: [CommonModule,SidebarModule],
+  standalone: true,
+  imports: [CommonModule,SidebarModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css',
-  //schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SidebarComponent {
 
