@@ -137,7 +137,7 @@ function addCard(retrievedData: any[], search_entry: string): void {
 
           //CSS is not working for these so i have to include here
           businessCard.style.backgroundColor = "#597c47";
-          businessCard.style.width = "600px";
+          businessCard.style.width = "700px";
           businessCard.style.height = "auto";
           businessCard.style.padding = "20px";
           businessCard.style.marginTop = "20px";
@@ -322,7 +322,7 @@ function addCard(retrievedData: any[], search_entry: string): void {
             cardContent += `<p> Reviews: </p>`;
 
             cardContent += `<p> ${item.reviews.text} </p>`;
-            console.log(item.name, item.reviews.text)
+            //console.log(item.name, item.reviews.text)
           }
           businessCard.innerHTML = cardContent;
 
@@ -404,27 +404,26 @@ export class ContentComponent implements OnInit {
 
     if (this.showOnlyWiFi) {
       filtered = filtered.filter((each_business) => {
-        console.log(each_business.attributes.WiFi.toLowerCase)
-        return each_business.attributes && (each_business.attributes.WiFi.toLowerCase() == "free" || each_business.attributes.WiFi.toLowerCase() == "'free'");
+        return each_business.attributes && (each_business.attributes.WiFi == "free" || each_business.attributes.WiFi == "'free'" ||each_business.attributes.WiFi == "Free" );
         
       });
       //console.log("filter:", filtered)
       addCard(filtered, this.search_string!);}
     if (this.showOnlyGroupFriendly) {
       filtered = filtered.filter((each_business) => {
-        return each_business.attributes && each_business.attributes.RestaurantsGoodForGroups.toLowerCase()=="true";
+        return each_business.attributes && each_business.attributes.RestaurantsGoodForGroups=="True";
       });
       //console.log("filter:", filtered)
       addCard(filtered, this.search_string!);}
     if (this.showOnlyDogFriendly) {
       filtered = filtered.filter((each_business) => {
-        return each_business.attributes && each_business.attributes.DogsAllowed.toLowerCase()=="true";
+        return each_business.attributes && each_business.attributes.DogsAllowed=="True";
       });
       //console.log("filter:", filtered)
       addCard(filtered, this.search_string!);}
     if (this.showOnlyOutdoorSeat) {
       filtered = filtered.filter((each_business) => {
-        return each_business.attributes && each_business.attributes.OutdoorSeating.toLowerCase()=="true";
+        return each_business.attributes && each_business.attributes.OutdoorSeating=="True";
       });
       //console.log("filter:", filtered)
       addCard(filtered, this.search_string!);}
