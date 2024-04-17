@@ -87,7 +87,7 @@ getUserCoords(city: string, state: string) {
             const coordinates: number[] = [];
             coordinates.push(stateResult.latitude);
             coordinates.push(stateResult.longitude);
-            console.log('LAT/LONG PAIR',coordinates);
+            //console.log('LAT/LONG PAIR',coordinates);
 
         },
         error: function ajaxError(jqXHR: any) {
@@ -108,7 +108,7 @@ getZipCoords(zipcode: number) {
         const coordinates: number[] = [];
         coordinates.push(result[0].lat);
         coordinates.push(result[0].lon);
-        console.log('LAT/LONG PAIR',coordinates);
+        //console.log('LAT/LONG PAIR',coordinates);
     },
     error: function ajaxError(jqXHR) {
         console.error('Error: ', jqXHR.responseText);
