@@ -44,7 +44,7 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
 
       const truncatedName = businessName.substring(0, 7);
 
-      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${truncatedName}"`;
+      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${businessName}"`;
 
       const response = await axios.get(url); // Await the response
       const data = response.data;
