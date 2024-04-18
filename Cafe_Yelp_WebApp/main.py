@@ -121,14 +121,18 @@ def search_study_spot_by_id(spot_id):
     '''
     # INPUT: ID of the study spot
     # RETURN: JSON object containing the information of the study spot with the given ID [spot_data]
+    matching_spots = {}
     for db_url in DATABASE_URLS.values():
         response = requests.get(db_url + f"/spots/{spot_id}.json")
         if response.status_code == 200:
-            study_spot_data = response.json()
-            return study_spot_data
+            try:
+                study_spot_data = response.json()
+                matching_spots.update({spot_id: study_spot_data})
+            except json.decoder.JSONDecodeError:
+                print(f"Failed to decode JSON response from {db_url}")
         else:
             print(f"Failed to retrieve study spot by ID {spot_id} from {db_url}. Status code: {response.status_code}")
-    return None
+    return matching_spots
 
 def search_study_spots_by_postal_code(postal_code):
     '''
