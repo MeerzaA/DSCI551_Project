@@ -5,7 +5,7 @@ import { CommonModule} from '@angular/common';
 import { ActivatedRoute,Router, Params } from '@angular/router';
 import axios from 'axios';
 import 'bootstrap';
-import * as turf from "@turf/turf";
+//import * as turf from "@turf/turf";
 
 
 
@@ -16,10 +16,7 @@ const ENDPOINT = [
 ];
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> e3a172bdfb8d97943d9a1c00a7990fc456fc9c7b
 async function fetchBusinessZip(businessZip: string): Promise<string[]> {
   const results: string[] = [];
   for (let dbIndex = 0; dbIndex < ENDPOINT.length; dbIndex++) {
@@ -47,7 +44,7 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
 
       const truncatedName = businessName.substring(0, 7);
 
-      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${truncatedName}"`;
+      const url = `${ENDPOINT[dbIndex]}?orderBy="name"&equalTo="${businessName}"`;
 
       const response = await axios.get(url); // Await the response
       const data = response.data;
@@ -63,17 +60,14 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
 }
 
 
-<<<<<<< HEAD
-=======
 //Calculate how far a business it
-function calcDist(coord1: number[], coord2: number[]): number {
+/*function calcDist(coord1: number[], coord2: number[]): number {
   const options = { units: 'miles' } as { units?: turf.Units | undefined };
   const distance = turf.distance(turf.point(coord1), turf.point(coord2), options);
   console.log("Distance:", distance, "miles");
 
   return distance;
-
-}
+*/
 
 //trying to get surrounding zipcodes
 /*function SurroundingZips(zip: string | number): number[] {
@@ -91,7 +85,6 @@ function calcDist(coord1: number[], coord2: number[]): number {
 }*/
 
 //display rating as stars
->>>>>>> e3a172bdfb8d97943d9a1c00a7990fc456fc9c7b
 function showStar(rating: number): string {
   let starsHTML = '';
   //Only show number of stars that correspond to rating
@@ -130,7 +123,7 @@ function addCard(retrievedData: any[], search_entry: string): void {
   const resultcountContainer = document.getElementById("result-count");
   if (resultcountContainer) {
   resultcountContainer.innerHTML = `<p>Showing ${retrievedData.length } Results for: ${search_entry}</p>`;}
-
+  
   const businessCardsContainer = document.getElementById("businesses");
   if (businessCardsContainer && retrievedData) {
     businessCardsContainer.innerHTML = " ";
@@ -144,8 +137,8 @@ function addCard(retrievedData: any[], search_entry: string): void {
 
           //CSS is not working for these so i have to include here
           businessCard.style.backgroundColor = "#597c47";
-          businessCard.style.width = "600px";
-          businessCard.style.height = "800px";
+          businessCard.style.width = "700px";
+          businessCard.style.height = "auto";
           businessCard.style.padding = "20px";
           businessCard.style.marginTop = "20px";
 
@@ -155,28 +148,29 @@ function addCard(retrievedData: any[], search_entry: string): void {
             cardContent += `<img src="../assets/khuc-le-thanh-danh-gFJRgtzPNVc-unsplash.jpg" width="300" height="200">`
             console.log(item.categories.includes('Restaurants'))
           }
-        else if (item.categories.includes('Farmers Market,Grocery, Specialty Food')) {
-            cardContent += `<img src="../assets/shelley-pauls-Zaiuy5dKeCk-unsplash.jpg" width="300" height="200">`
-          }
-          else if (item.categories.includes('Pizza ')) {
-            cardContent += `<img src="../assets/ivan-torres-MQUqbmszGGM-unsplash.jpg" width="300" height="200">`
-          }
-          else if (item.categories.includes('Fast Food ')) {
-            cardContent += `<img src="../assets/2150887950.jpg" width="300" height="200">`
-          }
-          else if (item.categories.includes('Delis ')) {
-            cardContent += `<img src="../assets/scott-hendrickson-3xVgYMGpU6k-unsplash.jpg" width="300" height="200">`
-          }
-          else if (item.categories.includes('Cafes')) {
-            cardContent += `<img src="../assets/soothing-cinnamon-drink-casting-cozy-light-table.jpg" width="300" height="200">`
-          }
+        else if (item.categories.includes('Farmers Market') || item.categories.includes('Grocery') || item.categories.includes('Specialty Food')) {
+          cardContent += `<img src="../assets/shelley-pauls-Zaiuy5dKeCk-unsplash.jpg" width="300" height="200">`
+        }
+        else if (item.categories.includes('Pizza')) {
+          cardContent += `<img src="../assets/ivan-torres-MQUqbmszGGM-unsplash.jpg" width="300" height="200">`
+        }
+        else if (item.categories.includes('Fast Food')) {
+          cardContent += `<img src="../assets/2150887950.jpg" width="300" height="200">`
+        }
+        else if (item.categories.includes('Delis')) {
+          cardContent += `<img src="../assets/scott-hendrickson-3xVgYMGpU6k-unsplash.jpg" width="300" height="200">`
+        }
+        else if (item.categories.includes('Cafes') || item.categories.includes('Coffee & Tea')) {
+          cardContent += `<img src="../assets/soothing-cinnamon-drink-casting-cozy-light-table.jpg" width="300" height="200">`
+        }
         else if (item.categories.includes('Steakhouses')) {
           cardContent += `<img src="../assets/yuhan-du-qsqVYKxqlzs-unsplash.jpg" width="300" height="200">`
-          console.log(item.categories.includes('Restaurants'))
         }
         else if (item.categories.includes('Restaurants')) {
           cardContent += `<img src="../assets/7442.jpg" width="300" height="200">`
-          console.log(item.categories.includes('Restaurants'))
+        }
+        else if (item.categories.includes('Breweries')) {
+          cardContent += `<img src="../assets/louis-hansel-WCm4dFvZnMM-unsplash.jpg" width="300" height="200">`
         }
         else {
           cardContent += `<img src="../assets/shelley-pauls-Zaiuy5dKeCk-unsplash.jpg" width="300" height="200">`
@@ -294,7 +288,7 @@ function addCard(retrievedData: any[], search_entry: string): void {
           }
 
           //https://getbootstrap.com/docs/4.0/components/collapse/
-          if (item.hours) {
+          /*if (item.hours) {
             cardContent += `<button class="btn btn-primary" type="button" data-toggle="collapse" 
             data-target="#allHoursCollapse" aria-expanded="false" aria-controls="allHoursCollapse">
             Hours of Operation
@@ -316,16 +310,19 @@ function addCard(retrievedData: any[], search_entry: string): void {
             if (item.hours.Sunday) {
               cardContent += `<p>Sunday: ${item.hours.Sunday}</p>`;}
             cardContent += `</div></div>`;
-          }
+          }*/
           
           if (item.reviews) {
-            cardContent += `<button class="btn btn-primary" type="button" data-toggle="collapse" 
-            data-target="#reviews" aria-expanded="false" aria-controls="reviews">
+            /*cardContent += `<button class="btn btn-primary" type="button" data-toggle="collapse" 
+            data-target="#reviews" aria-expanded="true" aria-controls="reviews">
             Reviews
           </button>
           <div class="collapse" id="reviews">
-            <div class="card card-body">`;
+            <div class="card card-body">`;*/
+            cardContent += `<p> Reviews: </p>`;
+
             cardContent += `<p> ${item.reviews.text} </p>`;
+            //console.log(item.name, item.reviews.text)
           }
           businessCard.innerHTML = cardContent;
 
@@ -407,7 +404,8 @@ export class ContentComponent implements OnInit {
 
     if (this.showOnlyWiFi) {
       filtered = filtered.filter((each_business) => {
-        return each_business.attributes && (each_business.attributes.WiFi == "free" || each_business.attributes.WiFi == "'free'");
+        return each_business.attributes && (each_business.attributes.WiFi == "free" || each_business.attributes.WiFi == "'free'" ||each_business.attributes.WiFi == "Free" );
+        
       });
       //console.log("filter:", filtered)
       addCard(filtered, this.search_string!);}
@@ -439,10 +437,10 @@ export class ContentComponent implements OnInit {
   handleWiFiCheckboxChange(event: Event): void {
     const checkbox = event.target as HTMLInputElement;
     if (checkbox && checkbox.checked){
-      console.log(checkbox.value, "True")
+      //console.log(checkbox.value, "True")
       this.showOnlyWiFi = true;}
     else{
-        console.log(checkbox?.value, "False")
+        //console.log(checkbox?.value, "False")
         this.showOnlyWiFi = false;}
     this.filterBusinesses();
   }
@@ -450,30 +448,30 @@ export class ContentComponent implements OnInit {
   handleGroupFriendlyCheckboxChange(event: Event): void {
     const checkbox = event.target as HTMLInputElement;
     if (checkbox && checkbox.checked){
-      console.log(checkbox.value, "True")
+      //console.log(checkbox.value, "True")
       this.showOnlyGroupFriendly = true;}
     else{
-        console.log(checkbox?.value, "False")
+        //console.log(checkbox?.value, "False")
         this.showOnlyGroupFriendly = false;}
     this.filterBusinesses();
   }
   handleDogFriendlyCheckboxChange(event: Event): void {
     const checkbox = event.target as HTMLInputElement;
     if (checkbox && checkbox.checked){
-      console.log(checkbox.value, "True")
+      //console.log(checkbox.value, "True")
       this.showOnlyDogFriendly = true;}
     else{
-        console.log(checkbox?.value, "False")
+       // console.log(checkbox?.value, "False")
         this.showOnlyDogFriendly = false;}
     this.filterBusinesses();
   }
   handleOutdoorSeatCheckboxChange(event: Event): void {
     const checkbox = event.target as HTMLInputElement;
     if (checkbox && checkbox.checked){
-      console.log(checkbox.value, "True")
+      //console.log(checkbox.value, "True")
       this.showOnlyOutdoorSeat = true;}
     else{
-        console.log(checkbox?.value, "False")
+        //console.log(checkbox?.value, "False")
         this.showOnlyOutdoorSeat = false;}
     this.filterBusinesses();
   }
