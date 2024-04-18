@@ -5,11 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
 
 import axios from 'axios';
-import * as $ from 'jquery';
-
-
-
-
+//import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',
@@ -59,7 +55,7 @@ export class HomeComponent {
       this.router.navigate(['/search'], { state: { businessZip: businessZip } });    
     }
     const businessZipInt: number = parseInt(businessZip);
-    this.getZipCoords(businessZipInt)
+    //this.getZipCoords(businessZipInt)
   }
   onSearchName(businessName: string) {
     if (businessName) {
@@ -70,7 +66,7 @@ export class HomeComponent {
 
 //https://api-ninjas.com/api/geocoding
 //need to make this [lat, long]
-getUserCoords(city: string, state: string) {
+/*getUserCoords(city: string, state: string) {
   //npm install --save-dev @types/jquery
     $.ajax({
         method: 'GET',
@@ -95,9 +91,9 @@ getUserCoords(city: string, state: string) {
         }
     });
   }
+*/    //GET ZIPCODE COORDS
 
-    //GET ZIPCODE COORDS
-getZipCoords(zipcode: number) {
+/* getZipCoords(zipcode: number) {
   $.ajax({
     method: 'GET',
     url: 'https://api.api-ninjas.com/v1/zipcode?zip=' + zipcode,
@@ -116,5 +112,6 @@ getZipCoords(zipcode: number) {
     });
 
 
-}
+}*/
+
 }
