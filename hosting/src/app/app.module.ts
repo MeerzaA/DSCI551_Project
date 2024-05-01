@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ContentComponent } from './content/content.component';
 
@@ -28,7 +27,6 @@ import { AppComponent } from './app.component';
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    SidebarComponent,
     LayoutComponent,
     ContentComponent
   ],

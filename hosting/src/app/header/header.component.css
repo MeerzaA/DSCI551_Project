@@ -9,13 +9,9 @@ svg {
     vertical-align: left;
     margin: 20;
     margin-left: 20;
-
-
   }
 
-
 .header-container {
-  
   top: 0px; 
   position: fixed;
   background-color: #597c47; 
@@ -47,9 +43,6 @@ svg {
   padding: 10px;
   text-align: left;
   align-items: left; 
-
-
-  
 }
 
 .sidebar-container {

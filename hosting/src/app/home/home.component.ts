@@ -1,11 +1,8 @@
 import { Component } from '@angular/core';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
 
-import axios from 'axios';
-//import * as $ from 'jquery';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +10,6 @@ import axios from 'axios';
   imports: [FormsModule, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
-  //schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeComponent {
   searchCriteria: string = 'zipcode';
@@ -21,6 +17,7 @@ export class HomeComponent {
   city: string = ''; 
   state: string = ''; 
 
+  //Goal was to give users a dropdown option for their state to search business names
   //https://gist.github.com/tleen/6299431
   stateNames: string[] = [
     'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -84,7 +81,6 @@ export class HomeComponent {
             coordinates.push(stateResult.latitude);
             coordinates.push(stateResult.longitude);
             //console.log('LAT/LONG PAIR',coordinates);
-
         },
         error: function ajaxError(jqXHR: any) {
             console.error('Error: ', jqXHR.responseText);
