@@ -22,13 +22,8 @@ export class HeaderComponent {
     //console.log('Sidebar Visible:');
     this.sidebarVisible = !this.sidebarVisible;
   }
-
-
+  
   constructor(private router: Router) {}
-
-  ngOnInit(): void {
-  }
-
   navigateHome() {
     this.router.navigate(['/home']);
   }

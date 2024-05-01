@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CUSTOM_ELEMENTS_SCHEMA, Output, EventEmitter  } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule} from '@angular/common';
 
