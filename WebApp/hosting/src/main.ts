@@ -29,6 +29,15 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
+
+
+
+
+
+
+
+
+//Implemented this in Content Component
 // Using curl commands in TS
 
 const ENDPOINT = [

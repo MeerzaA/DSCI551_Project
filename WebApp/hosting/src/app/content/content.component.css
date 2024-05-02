@@ -7,7 +7,6 @@
     z-index:-1;
 }
 
-
 .home-container {
     flex: 1; 
     background-color: #bad0ae;
@@ -37,7 +36,7 @@
     height: auto;
 }
 .spacer {
-    margin-left: 10px; /* Adjust the value as needed */
+    margin-left: 10px; 
 }
 .business-card {
     background-color: #597c47;
@@ -47,6 +46,7 @@
     margin-top: 20px;
 
 }
+
 /*https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
 #businesses {
     display: flex;

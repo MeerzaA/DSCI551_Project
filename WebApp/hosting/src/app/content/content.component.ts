@@ -5,7 +5,8 @@ import { CommonModule} from '@angular/common';
 import { ActivatedRoute,Router, Params } from '@angular/router';
 import axios from 'axios';
 import 'bootstrap';
-//import * as turf from "@turf/turf";
+//import * as turf from "@turf/turf";  
+//Was planning to use turf to calculate distance from user and business but unable to implement
 
 
 
@@ -59,13 +60,12 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
   return results; // return array of results
 }
 
-
+//Unable to implement
 //Calculate how far a business it
 /*function calcDist(coord1: number[], coord2: number[]): number {
   const options = { units: 'miles' } as { units?: turf.Units | undefined };
   const distance = turf.distance(turf.point(coord1), turf.point(coord2), options);
   console.log("Distance:", distance, "miles");
-
   return distance;
 */
 
@@ -78,11 +78,11 @@ async function fetchBusinessName(businessName: string): Promise<string[]> {
   For (i<=100) {
     Ziplist.push(zipcode+i)
     Ziplist.push(zipcode-i) 
-    
     Count++;
   }
   return Ziplist
 }*/
+
 
 //display rating as stars
 function showStar(rating: number): string {
@@ -110,12 +110,11 @@ function showStar(rating: number): string {
 
 
 
-
+//Various references used for adding business cards
 //https://www.codeproject.com/Questions/1156482/How-to-make-dynamic-list-in-HTML
 //https://stackoverflow.com/questions/53867808/dynamic-table-with-typescript-and-html
 //https://www.youtube.com/watch?v=f-Chl4CVlTs
 //https://dev.to/hcoco1/javascript-dynamic-list-the-dom-manipulation-10c5
-
 
 
 //adding attributes to business card
@@ -134,7 +133,6 @@ function addCard(retrievedData: any[], search_entry: string): void {
           businessCard.className = "business-card";
 
 
-
           //CSS is not working for these so i have to include here
           businessCard.style.backgroundColor = "#597c47";
           businessCard.style.width = "700px";
@@ -142,7 +140,7 @@ function addCard(retrievedData: any[], search_entry: string): void {
           businessCard.style.padding = "20px";
           businessCard.style.marginTop = "20px";
 
-        //I want picture, rating and name in at the top
+
         let cardContent = `<p>`
         if (item.categories.includes('Convenience Stores')) {
             cardContent += `<img src="../assets/khuc-le-thanh-danh-gFJRgtzPNVc-unsplash.jpg" width="300" height="200">`
@@ -287,6 +285,7 @@ function addCard(retrievedData: any[], search_entry: string): void {
               ;
           }
 
+          //Did not included 
           //https://getbootstrap.com/docs/4.0/components/collapse/
           /*if (item.hours) {
             cardContent += `<button class="btn btn-primary" type="button" data-toggle="collapse" 
@@ -313,6 +312,7 @@ function addCard(retrievedData: any[], search_entry: string): void {
           }*/
           
           if (item.reviews) {
+            //unable to get button to work//
             /*cardContent += `<button class="btn btn-primary" type="button" data-toggle="collapse" 
             data-target="#reviews" aria-expanded="true" aria-controls="reviews">
             Reviews
@@ -368,8 +368,6 @@ export class ContentComponent implements OnInit {
   showOnlyOutdoorSeat: boolean = false;
   BusinessLength: number = 0
   search_string: string = 'hold'
-  //option for quiet,avg,loud noise level
-
 
 
   constructor(private route: ActivatedRoute,private router: Router) {}
@@ -434,6 +432,7 @@ export class ContentComponent implements OnInit {
   }
 
   //https://www.w3schools.com/howto/howto_js_display_checkbox_text.asp
+  //https://stackoverflow.com/questions/68798849/issue-in-code-event-target-checked-in-angular-11
   handleWiFiCheckboxChange(event: Event): void {
     const checkbox = event.target as HTMLInputElement;
     if (checkbox && checkbox.checked){
