@@ -18,9 +18,22 @@ To view our webapp codebase you can navigate to [./WebApp/hosting/src](/WebApp/h
 
 We used Angular for our frontend framework, and all of our website components are stored individually, these files can be viewed in [/src/app](/WebApp/hosting/src/app). 
 
-
 <h2 align="center">Run Commands</h2>
-believe the project requirements are to build a web application that users can visit to interact with a data source. The web app should ideally have a distributed database, with a minimum of two tables, and two UI interfaces. The first one should be front-end heavy and be designed to display our dataset in a meaningful way so that users can interact with it, the other UI should be reserved for data manipulation by a data manager; this one can be a CLI. It is also important to note that the data manager
+You are able to download the whole code base and run it locally to test it, all interactions with our database are done through CURL commands for both the user and the data administrators. 
+
+Here are some important libraries you need to download in your terminal before running this project locally. 
+
+Download: [Nodejs](https://nodejs.org/en/download/current) & [Python](https://www.python.org/downloads/) 
+
+Open a terminal in the directory with the project files, and run the following commands.
+
+`npm install firebase` | `npm install firebase-tools`
+
+`npm install -g @angular/cli` | `npm install axios` 
+
+
+To launch the web app locally do: ng serve 
+
 
 <h2 align="center">Team Members & Background</h2>
 
