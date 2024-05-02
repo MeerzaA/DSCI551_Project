@@ -29,7 +29,7 @@ Open a terminal in the directory with the project files, and run the following c
 
 `npm install firebase` | `npm install firebase-tools`
 
-`npm install -g @angular/cli` | `npm install axios` 
+`npm install -g @angular/cli` | `npm install axios` | `npm install bootstrap`
 
 
 To launch the web app locally do : `ng serve` 
