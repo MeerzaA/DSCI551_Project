@@ -1,6 +1,6 @@
 <h1 align="center">DSCI 551 Project: Study Yelp</h1>
 
-# DSCI 551 Project: Study YelP (yelp.com)
+# DSCI 551 Project: Study Yelp https://www.linkedin.com/pulse/github-readmemd-how-add-link-billour-ou
 
 <h2 align="center">Team Member Background & Skills</h2>
 
