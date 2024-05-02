@@ -8,13 +8,19 @@ Our project is split between two programs, one for our users and another one for
 
 The file structure for our project is as follows:
 
-[./main.py](/main.py) is located in the root directory, and is used for the data adminstration portion of our program.
+[./main.py](/main.py) is located in the root directory, and is used for the data administration portion of our program.
 
-All webapp files are in the ./Webapp directory, this mainly for viewing since our program is live and you can visit it via the link.   
+All web app files are in the [./Webap](./Webapp) directory, this is mainly for viewing since our program is live and you can interact with it via the link.   
 
-<h2 align="center">File Structure</h2>
+Inside the ./Webapp directory, there are several files with one directory called hosting.
+You want to navigate to [./Webapp/hosting/src](./Webapp/hosting/src) which contains all the necessary program files.
 
-We believe the project requirements are to build a web application that users can visit to interact with a data source. The web app should ideally have a distributed database, with a minimum of two tables, and two UI interfaces. The first one should be front-end heavy and be designed to display our dataset in a meaningful way so that users can interact with it, the other UI should be reserved for data manipulation by a data manager; this one can be a CLI. It is also important to note that the data manager needs to be able to add, delete, and modify any specific tuple in any of our database tables. Our implementation needs to include a standout feature or element, to gain full credit on the project.
+We used Angular for our frontend framework, which means all of our website components are stored individually, these files can be inspected in [src/assets](./Webapp/hosting/src/assets). 
+
+
+<h2 align="center">Run Commands</h2>
+
+
 
 <h2 align="center">Run Instructions</h2>
 
