@@ -4,13 +4,15 @@
 
 <h2 align="center">File Structure</h2>
 
-Our project is split between two programs, one for our users and another one for the data adminstraer. All user interactions are done with our live webapp via the above link, and all data aminstartion is done with our python program called main.py using the CLI. 
+Our project is split between two programs, one for our users and another one for the data administrator. All user interactions are done with our live web app via the above link, and all data administration is done with our Python program called main.py using the CLI. 
 
 The file structure for our project is as follows:
 
-./main.py is located in the root directoty, and can 
+[./main.py](/main.py) is located in the root directory, and is used for the data adminstration portion of our program.
 
-All webapp files are in the ./Webapp directory, and our data adminstrature program is called main.py. 
+All webapp files are in the ./Webapp directory, this mainly for viewing since our program is live and you can visit it via the link.   
+
+<h2 align="center">File Structure</h2>
 
 We believe the project requirements are to build a web application that users can visit to interact with a data source. The web app should ideally have a distributed database, with a minimum of two tables, and two UI interfaces. The first one should be front-end heavy and be designed to display our dataset in a meaningful way so that users can interact with it, the other UI should be reserved for data manipulation by a data manager; this one can be a CLI. It is also important to note that the data manager needs to be able to add, delete, and modify any specific tuple in any of our database tables. Our implementation needs to include a standout feature or element, to gain full credit on the project.
 
