@@ -1,6 +1,7 @@
 <h1 align="center">DSCI 551 Project: Study Yelp</h1>
 
-## Link to live website: https://dsci551-finalproject-756e6.web.app
+<h2 align="center">Link to live website: <a href="https://dsci551-finalproject-756e6.web.app">https://dsci551-finalproject-756e6.web.app</a></h2>
+
 
 <h2 align="center">Team Member Background & Skills</h2>
 
