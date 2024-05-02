@@ -10,13 +10,13 @@ The file structure for our project is as follows:
 
 [./main.py](/main.py) | handles all data administration tasks, simply open a terminal in the root directory and run the commands listed above each function in `__main__`. 
 
-[./Webapp](/Webapp) | All web app files are in this directory, this is mainly for viewing since our program is live and you can interact with it via the link.   
+[./Webapp](/WebApp/) | All web app files are in this directory, this is mainly for viewing since our program is live and you can interact with it via the link.   
   
 Inside the `./Webapp` directory, there are several files that can be ignored, and one directory called `hosting/`.
 
-To view our webapp codebase you can navigate to [./Webapp/hosting/src](/Webapp/hosting/src) which contains all the necessary program files, `index.html`, `main.ts`,`styles.css`.
+To view our webapp codebase you can navigate to [./Webapp/hosting/src](/WebApp/hosting/src) which contains all the necessary program files, `index.html`, `main.ts`,`styles.css`.
 
-We used Angular for our frontend framework, and all of our website components are stored individually, these files can be viewed in [src/app](/Webapp/hosting/src/app). 
+We used Angular for our frontend framework, and all of our website components are stored individually, these files can be viewed in [src/app](/WebApp/hosting/src/app). 
 
 
 <h2 align="center">Run Commands</h2>
