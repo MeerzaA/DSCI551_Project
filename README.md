@@ -2,9 +2,21 @@
 
 <h2 align="center">Website link: <a href="https://dsci551-finalproject-756e6.web.app">https://dsci551-finalproject-756e6.web.app</a></h2>
 
-<h2 align="center">Project requirements</h2>
+<h2 align="center">File Structure</h2>
+
+Our project is split between two programs, one for our users and another one for the data adminstraer. All user interactions are done with our live webapp via the above link, and all data aminstartion is done with our python program called main.py using the CLI. 
+
+The file structure for our project is as follows:
+
+./main.py is located in the root directoty, and can 
+
+All webapp files are in the ./Webapp directory, and our data adminstrature program is called main.py. 
 
 We believe the project requirements are to build a web application that users can visit to interact with a data source. The web app should ideally have a distributed database, with a minimum of two tables, and two UI interfaces. The first one should be front-end heavy and be designed to display our dataset in a meaningful way so that users can interact with it, the other UI should be reserved for data manipulation by a data manager; this one can be a CLI. It is also important to note that the data manager needs to be able to add, delete, and modify any specific tuple in any of our database tables. Our implementation needs to include a standout feature or element, to gain full credit on the project.
+
+<h2 align="center">Run Instructions</h2>
+
+e believe the project requirements are to build a web application that users can visit to interact with a data source. The web app should ideally have a distributed database, with a minimum of two tables, and two UI interfaces. The first one should be front-end heavy and be designed to display our dataset in a meaningful way so that users can interact with it, the other UI should be reserved for data manipulation by a data manager; this one can be a CLI. It is also important to note that the data manag
 
 <h2 align="center">Team Members & Background</h2>
 
