@@ -1,4 +1,6 @@
-**<h1 align="center">DSCI 551 Project: Study Yelp</h1>**https://github.com/MeerzaA/DSCI551_Project
+<h1 align="center">DSCI 551 Project: Study Yelp</h1>
+
+# DSCI 551 Project: Study YelP (yelp.com)
 
 <h2 align="center">Team Member Background & Skills</h2>
 
