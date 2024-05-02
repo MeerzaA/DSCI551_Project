@@ -32,7 +32,7 @@ Open a terminal in the directory with the project files, and run the following c
 `npm install -g @angular/cli` | `npm install axios` 
 
 
-To launch the web app locally do: ng serve 
+To launch the web app locally do : `ng serve` 
 
 
 <h2 align="center">Team Members & Background</h2>
