@@ -1,6 +1,6 @@
-<h1 align="center">## Link to live website: [https://www.linkedin.com/pulse/github-readmemd-how-add-link-billour-ou](https://dsci551-finalproject-756e6.web.app)p</h1>
+<h1 align="center">DSCI 551 Project: Study Yelp</h1>
 
-## Link to live website: (https://dsci551-finalproject-756e6.web.app)
+## Link to live website: https://dsci551-finalproject-756e6.web.app
 
 <h2 align="center">Team Member Background & Skills</h2>
 
