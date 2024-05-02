@@ -1,4 +1,4 @@
-<h1 align="center">DSCI 551 Project: Study Yelp</h1>
+[<h1 align="center">DSCI 551 Project: Study Yelp</h1>](https://pll.harvard.edu/course/cs50-introduction-computer-science)
 
 <h2 align="center">Team Member Background & Skills</h2>
 
