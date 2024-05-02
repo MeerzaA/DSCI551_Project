@@ -19,12 +19,7 @@ We used Angular for our frontend framework, which means all of our website compo
 
 
 <h2 align="center">Run Commands</h2>
-
-
-
-<h2 align="center">Run Instructions</h2>
-
-e believe the project requirements are to build a web application that users can visit to interact with a data source. The web app should ideally have a distributed database, with a minimum of two tables, and two UI interfaces. The first one should be front-end heavy and be designed to display our dataset in a meaningful way so that users can interact with it, the other UI should be reserved for data manipulation by a data manager; this one can be a CLI. It is also important to note that the data manag
+believe the project requirements are to build a web application that users can visit to interact with a data source. The web app should ideally have a distributed database, with a minimum of two tables, and two UI interfaces. The first one should be front-end heavy and be designed to display our dataset in a meaningful way so that users can interact with it, the other UI should be reserved for data manipulation by a data manager; this one can be a CLI. It is also important to note that the data manag
 
 <h2 align="center">Team Members & Background</h2>
 
