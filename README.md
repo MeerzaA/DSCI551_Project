@@ -2,8 +2,6 @@
 
 <h2 align="center">Website link: <a href="https://dsci551-finalproject-756e6.web.app">https://dsci551-finalproject-756e6.web.app</a></h2>
 
-
-
 <h2 align="center">Run Commands</h2>
 You are able to download the whole code base and run it locally to test it, all interactions with our database are done through CURL commands for both the user and the data administrators. 
 
