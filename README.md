@@ -7,7 +7,7 @@
 <h2 align="center">Run Commands</h2>
 You are able to download the whole code base and run it locally to test it, all interactions with our database are done through CURL commands for both the user and the data administrators. 
 
-Here are some important libraries you need to download in your terminal before running this project locally. 
+  Here are some important libraries you need to download in your terminal before running this project locally. 
 
 Download: [Nodejs](https://nodejs.org/en/download/current) & [Python](https://www.python.org/downloads/) 
 
