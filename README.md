@@ -4,7 +4,7 @@
 
 <h2 align="center">Run Commands</h2>
 
-You are able to download the whole code base and run it locally to test it. All interactions with our database are done through CURL commands for both the user and the data administrators. Note that you can interact with the webapp with out needing to download the project, since you can just click the above link to access the web/user portion of the program. 
+You are able to download the whole code base and run it locally to test it. All interactions with our database are done through CURL commands for both the user and the data administrators. Note that you can interact with the webapp without needing to download the project since you can just click the above link to access the web/user portion of the program. 
 
 Here are some important libraries you need to download in your terminal before running this project locally.
 
@@ -18,7 +18,7 @@ Install Python libraries:
 Install Node libraries: 
 `npm install firebase` | `npm install firebase-tools` `npm install -g @angular/cli` | `npm install axios` | `npm install bootstrap`
 
-To launch the web app locally do: `ng serve` 
+To launch the web app locally do: `ng serve`, then go to http://localhost:4200/home 
 
 <h2 align="center">File Structure</h2>
 
