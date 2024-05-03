@@ -5,6 +5,8 @@
   Youtube <a href="https://www.youtube.com/watch?v=jvr61s6kXJ0&ab_channel=AlanTrinh">https://www.youtube.com/watch?v=jvr61s6kXJ0&ab_channel=AlanTrinh</a>
 </h2>
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/jvr61s6kXJ0?si=3k3NQ1bU8I0EWdNH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 <h2 align="center">Run Commands</h2>
 
 You are able to download the whole code base and run it locally to test it. All interactions with our database are done through CURL commands for both the user and the data administrators. Note that you can interact with the webapp without needing to download the project since you can just click the above link to access the web/user portion of the program. 
