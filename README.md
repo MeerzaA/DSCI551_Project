@@ -6,6 +6,21 @@
 
 Our project is split between two programs, one for our users and another one for the data administrator. All user interactions are done with our live web app via the above link, and all data administration is done with our Python program called main.py using the CLI. 
 
+<h2 align="center">Run Commands</h2>
+You are able to download the whole code base and run it locally to test it, all interactions with our database are done through CURL commands for both the user and the data administrators. 
+
+Here are some important libraries you need to download in your terminal before running this project locally. 
+
+Download: [Nodejs](https://nodejs.org/en/download/current) & [Python](https://www.python.org/downloads/) 
+
+Open a terminal in the directory with the project files, and run the following commands.
+
+Install Python libraries: `pip3 install json` | `pip3 install requests` | `pip3 install sys` | `pip3 install uuid | pip3 install geopy`
+
+Install Node libraries: `npm install firebase` | `npm install firebase-tools` `npm install -g @angular/cli` | `npm install axios` | `npm install bootstrap`
+
+To launch the web app locally do: `ng serve` 
+
 The file structure for our project is as follows:
 
 [./main.py](/main.py) | handles all data administration tasks, simply open a terminal in the root directory and run the commands listed above each function in `__main__`. 
@@ -18,21 +33,7 @@ To view our webapp codebase you can navigate to [./WebApp/hosting/src](/WebApp/h
 
 We used Angular for our frontend framework, and all of our website components are stored individually, these files can be viewed in [/src/app](/WebApp/hosting/src/app). 
 
-<h2 align="center">Run Commands</h2>
-You are able to download the whole code base and run it locally to test it, all interactions with our database are done through CURL commands for both the user and the data administrators. 
 
-Here are some important libraries you need to download in your terminal before running this project locally. 
-
-Download: [Nodejs](https://nodejs.org/en/download/current) & [Python](https://www.python.org/downloads/) 
-
-Open a terminal in the directory with the project files, and run the following commands.
-
-`npm install firebase` | `npm install firebase-tools`
-
-`npm install -g @angular/cli` | `npm install axios` | `npm install bootstrap`
-
-
-To launch the web app locally do : `ng serve` 
 
 
 <h2 align="center">Team Members & Background</h2>
