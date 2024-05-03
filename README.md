@@ -2,9 +2,7 @@
 
 <h2 align="center">Website link: <a href="https://dsci551-finalproject-756e6.web.app">https://dsci551-finalproject-756e6.web.app</a></h2>
 
-<h2 align="center">File Structure</h2>
 
-Our project is split between two programs, one for our users and another one for the data administrator. All user interactions are done with our live web app via the above link, and all data administration is done with our Python program called main.py using the CLI. 
 
 <h2 align="center">Run Commands</h2>
 You are able to download the whole code base and run it locally to test it, all interactions with our database are done through CURL commands for both the user and the data administrators. 
@@ -15,11 +13,17 @@ Download: [Nodejs](https://nodejs.org/en/download/current) & [Python](https://ww
 
 Open a terminal in the directory with the project files, and run the following commands.
 
-Install Python libraries: `pip3 install json` | `pip3 install requests` | `pip3 install sys` | `pip3 install uuid | pip3 install geopy`
+Install Python libraries: 
+`pip3 install json` | `pip3 install requests` | `pip3 install sys` | `pip3 install uuid | pip3 install geopy`
 
-Install Node libraries: `npm install firebase` | `npm install firebase-tools` `npm install -g @angular/cli` | `npm install axios` | `npm install bootstrap`
+Install Node libraries: 
+`npm install firebase` | `npm install firebase-tools` `npm install -g @angular/cli` | `npm install axios` | `npm install bootstrap`
 
 To launch the web app locally do: `ng serve` 
+
+<h2 align="center">File Structure</h2>
+
+Our project is split between two programs, one for our users and another one for the data administrator. All user interactions are done with our live web app via the above link, and all data administration is done with our Python program called main.py using the CLI. 
 
 The file structure for our project is as follows:
 
