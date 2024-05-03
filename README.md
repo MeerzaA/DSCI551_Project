@@ -1,8 +1,8 @@
 <h1 align="center">DSCI551 Project: Study Yelp</h1>
 
 <h2 align="center">
-  Website <a href="https://dsci551-finalproject-756e6.web.app">Cafe Yelp Webapp</a>
-  Youtube <a href="https://www.youtube.com/watch?v=jvr61s6kXJ0&ab_channel=AlanTrinh">Video implementation</a>
+  Website: <a href="https://dsci551-finalproject-756e6.web.app">Cafe Yelp Webapp</a> | 
+  Youtube: <a href="https://www.youtube.com/watch?v=jvr61s6kXJ0&ab_channel=AlanTrinh">Video implementation</a>
 </h2>
 
 <h2 align="center">Run Commands</h2>
