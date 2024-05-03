@@ -1,11 +1,9 @@
 <h1 align="center">DSCI551 Project: Study Yelp</h1>
 
 <h2 align="center">
-  Website <a href="https://dsci551-finalproject-756e6.web.app">https://dsci551-finalproject-756e6.web.app</a>
-  Youtube <a href="https://www.youtube.com/watch?v=jvr61s6kXJ0&ab_channel=AlanTrinh">https://www.youtube.com/watch?v=jvr61s6kXJ0&ab_channel=AlanTrinh</a>
+  Website <a href="https://dsci551-finalproject-756e6.web.app">Cafe Yelp Webapp</a>
+  Youtube <a href="https://www.youtube.com/watch?v=jvr61s6kXJ0&ab_channel=AlanTrinh">Video implementation</a>
 </h2>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jvr61s6kXJ0?si=3k3NQ1bU8I0EWdNH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 <h2 align="center">Run Commands</h2>
 
