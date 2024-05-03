@@ -7,7 +7,7 @@
 
 <h2 align="center">Run Commands</h2>
 
-You are able to download the whole code base and run it locally to test it. All interactions with our database are done through CURL commands for both the user and the data administrators. Note that you can interact with the webapp without needing to download the project since you can just click the above link to access the web/user portion of the program. 
+You are able to download the whole code base and run it locally to test it. All interactions with our database are done through CURL commands for both the user and the data administrators. Note that you can interact with the webapp without needing to run it locally, since you can just click the above link to access the web/user portion of the program. 
 
 Here are some important libraries you need to download in your terminal before running this project locally.
 
