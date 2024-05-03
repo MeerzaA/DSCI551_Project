@@ -34,7 +34,7 @@ Inside the `./WebApp` directory, there are several files that can be ignored, an
 
 To view our webapp codebase you can navigate to [./WebApp/hosting/src](/WebApp/hosting/src) which contains all the necessary program files, `index.html`, `main.ts`,`styles.css`.
 
-We used Angular for our frontend framework, and all of our website components are stored individually, these files can be viewed in [/src/app](/WebApp/hosting/src/app). 
+We used Angular for our frontend framework, and all of our website components are stored individually, these files can be viewed in [/src/app](/WebApp/hosting/src/app), Note that we talked about the individual components in dept in our implementation video. 
 
 
 
