@@ -24,6 +24,7 @@ Install Node libraries:
 To launch the web app locally, open a terminal, cd into /WebApp/hosting/ and do: `ng serve,` then go to http://localhost:4200/home 
 
 <h3 align="center">Webapp Query Instructions</h3>
+
 Our web app queries are limited to what is in our Firebase real-time databases. 
 
 Here are some sample queries you can type in the search bar. 
