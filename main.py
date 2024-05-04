@@ -181,56 +181,62 @@ if __name__ == "__main__":
     if len(sys.argv) < 3:
         print("Usage: python script.py [operation] [arguments]")
     
+    # Windows CLI commands tested in powershell
     else:
         operation = sys.argv[1].lower()
-        
+        # Windows: python ./main.py add_study_spot '{\"name\": \"LA Study Haven\",\"address\": \"456 Elm St\",\"city\": \"Los Angeles\",\"state\": \"CA\",\"postal_code\": \"90001\",\"latitude\": 34.0522,\"longitude\": -118.2437,\"stars\": 5,\"review_count\": 20,\"attributes\": {\"WiFi\": \"Free\",\"NoiseLevel\": \"Quiet\",\"OutdoorSeating\": \"Yes\"},\"categories\": [\"Coffee & Tea\",\"Library\"],\"hours\": {\"Monday\": \"8:00-20:00\",\"Tuesday\": \"8:00-20:00\",\"Wednesday\": \"8:00-20:00\",\"Thursday\": \"8:00-20:00\",\"Friday\": \"8:00-20:00\",\"Saturday\": \"9:00-17:00\",\"Sunday\": \"10:00-16:00\"}}'
+        # Mac python3 main.py add_study_spot '{"name": "LA Study Haven", "address": "456 Elm St", "city": "Los Angeles", "state": "CA", "postal_code": "90001", "latitude": 34.0522, "longitude": -118.2437, "stars": 5, "review_count": 20, "attributes": {"WiFi": "Free", "NoiseLevel": "Quiet", "OutdoorSeating": "Yes"}, "categories": ["Coffee & Tea", "Library"], "hours": {"Monday": "8:00-20:00", "Tuesday": "8:00-20:00", "Wednesday": "8:00-20:00", "Thursday": "8:00-20:00", "Friday": "8:00-20:00", "Saturday": "9:00-17:00", "Sunday": "10:00-16:00"}}'
         if operation == "add_study_spot":
             result = add_study_spot(json.loads(sys.argv[2]))
             print(result)
         
         elif operation == "search_study_spots_by_city": # Search by City
-            # python ./main.py search_study_spots_by_city 'Los Angeles'
-            # python ./main.py search_study_spots_by_city 'Indianapolis'
+            # Windows: python ./main.py search_study_spots_by_city 'Los Angeles'
+            # Mac: python3 main.py search_study_spots_by_city 'Indianapolis'
             city = sys.argv[2]
             study_spots = search_study_spots_by_city(city)
             print(json.dumps(dict(list(study_spots.items())[:2]), indent=4))
         
         elif operation == "search_study_spot_by_id": # Search by ID
-            # python ./main.py search_study_spot_by_id '-WY14B9U3ys08E9PwKOB8g'
-            # python ./main.py search_study_spot_by_id 'ykJ9zt1fJ1cOpxz5FkpVOQ'
+            # Windows: python ./main.py search_study_spot_by_id '-WY14B9U3ys08E9PwKOB8g'
+            # Mac: python3 main.py search_study_spot_by_id '-WY14B9U3ys08E9PwKOB8g'
             spot_id = sys.argv[2]
             study_spot = search_study_spot_by_id(spot_id)
             print(json.dumps(dict(list(study_spot.items())[:2]), indent=4))
         
         elif operation == "search_study_spots_by_postal_code": # Search by Posatal Code
-            # python ./main.py search_study_spots_by_postal_code '46219'
-            # python ./main.py search_study_spots_by_postal_code '90001'
+            # Windows: python ./main.py search_study_spots_by_postal_code '46219'
+            # Mac: python3 main.py search_study_spots_by_postal_code '46219'
             postal_code = sys.argv[2]
             study_spots = search_study_spots_by_postal_code(postal_code)
             print(json.dumps(dict(list(study_spots.items())[:1]), indent=4))
         
         elif operation == "search_study_spots_by_state": # Search by State
-            # python ./main.py search_study_spots_by_state 'CA'
+            # Windows: python ./main.py search_study_spots_by_state 'CA'
+            # Mac: python3 main.py search_study_spots_by_state 'CA'
             state = sys.argv[2]
             study_spots = search_study_spots_by_state(state)
             print(json.dumps(dict(list(study_spots.items())[:1]), indent=4))
         
         elif operation == "search_study_spots_by_distance": # Pass latitude and longitude as arguments
-            # python ./main.py search_study_spots_by_distance 27.9598673716 -82.5062573701 10
+            # Windows: python ./main.py search_study_spots_by_distance 27.9598673716 -82.5062573701 10
+            # Mac: python3 main.py search_study_spots_by_distance 39.780987 -86.90468924 50
             location = (float(sys.argv[2]), float(sys.argv[3]))  
             max_distance_km = float(sys.argv[4])
             study_spots = search_study_spots_by_distance(location, max_distance_km)
             print(json.dumps(dict(list(study_spots.items())[:1]), indent=4))
         
         elif operation == "modify_study_spot": # Modify a Spots
-            # python ./main.py modify_study_spot '33d95f8b-c4d7-4754-8f78-c2a8efd73a74' '{\"name\": \"Modified Study Spot\",\"address\": \"456 Elm St\",\"city\": \"San Jose\",\"state\": \"CA\",\"postal_code\": \"95112\",\"latitude\": 37.3382,\"longitude\": -121.8863,\"stars\": 5,\"review_count\": 20,\"attributes\": {\"WiFi\": \"Free\",\"NoiseLevel\": \"Quiet\",\"OutdoorSeating\": \"No\"},\"categories\": [\"Coffee & Tea\",\"Library\"],\"hours\": {\"Monday\": \"9:00-18:00\",\"Tuesday\": \"9:00-18:00\",\"Wednesday\": \"9:00-18:00\",\"Thursday\": \"9:00-18:00\",\"Friday\": \"9:00-18:00\",\"Saturday\": \"10:00-16:00\",\"Sunday\": \"Closed\"}}'
+            # Windows: python ./main.py modify_study_spot '33d95f8b-c4d7-4754-8f78-c2a8efd73a74' '{\"name\": \"Modified Study Spot\",\"address\": \"456 Elm St\",\"city\": \"San Jose\",\"state\": \"CA\",\"postal_code\": \"95112\",\"latitude\": 37.3382,\"longitude\": -121.8863,\"stars\": 5,\"review_count\": 20,\"attributes\": {\"WiFi\": \"Free\",\"NoiseLevel\": \"Quiet\",\"OutdoorSeating\": \"No\"},\"categories\": [\"Coffee & Tea\",\"Library\"],\"hours\": {\"Monday\": \"9:00-18:00\",\"Tuesday\": \"9:00-18:00\",\"Wednesday\": \"9:00-18:00\",\"Thursday\": \"9:00-18:00\",\"Friday\": \"9:00-18:00\",\"Saturday\": \"10:00-16:00\",\"Sunday\": \"Closed\"}}'
+            # Mac: python3 main.py modify_study_spot '33d95f8b-c4d7-4754-8f78-c2a8efd73a74' '{"name": "Modified Study Spot", "address": "456 Elm St", "city": "San Jose", "state": "CA", "postal_code": "95112", "latitude": 37.3382, "longitude": -121.8863, "stars": 5, "review_count": 20, "attributes": {"WiFi": "Free", "NoiseLevel": "Quiet", "OutdoorSeating": "No"}, "categories": ["Coffee & Tea", "Library"], "hours": {"Monday": "9:00-18:00", "Tuesday": "9:00-18:00", "Wednesday": "9:00-18:00", "Thursday": "9:00-18:00", "Friday": "9:00-18:00", "Saturday": "10:00-16:00", "Sunday": "Closed"}}'
             spot_id = sys.argv[2]
             new_spot_data = json.loads(sys.argv[3])
             success = modify_study_spot(spot_id, new_spot_data)
             print("Modification successful." if success else "Modification failed.")
         
         elif operation == "delete_study_spot": # Delete a spot
-            # python main.py delete_study_spot '33d95f8b-c4d7-4754-8f78-c2a8efd73a74'
+            # Windows: python ./main.py delete_study_spot '33d95f8b-c4d7-4754-8f78-c2a8efd73a74'
+            # Mac: python3 main.py delete_study_spot '33d95f8b-c4d7-4754-8f78-c2a8efd73a74'
             spot_id = sys.argv[2]
             success = delete_study_spot(spot_id)
             print("Deletion successful." if success else "Deletion failed.")

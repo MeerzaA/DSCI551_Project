@@ -5,11 +5,9 @@ import { CommonModule} from '@angular/common';
 import { ActivatedRoute,Router, Params } from '@angular/router';
 import axios from 'axios';
 import 'bootstrap';
+
 //import * as turf from "@turf/turf";  
 //Was planning to use turf to calculate distance from user and business but unable to implement
-
-
-
 
 const ENDPOINT = [
   'https://dsci-studyyelp-1-default-rtdb.firebaseio.com/spots.json',
