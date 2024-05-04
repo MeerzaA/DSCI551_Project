@@ -27,7 +27,7 @@ To launch the web app locally, open a terminal, cd into /WebApp/hosting/ and do:
 
 Our web app queries are limited to what is in our Firebase real-time databases. 
 
-Here are some sample queries you can type in the search bar. 
+**Here are some sample queries you can type in the search bar.** 
 
 **Zipcode:** `46184`, `18974`, `33701`
 
