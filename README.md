@@ -30,6 +30,7 @@ Our web app queries are limited to what is in our Firebase real-time databases.
 **Here are some sample queries you can type in the search bar.** 
 
 Select the Business Name from the drop-down before querying the business name.
+
 **Zipcode:** `46184`, `18974`, `33701`
 
 Select the Business Name from the drop-down before querying the business name.
