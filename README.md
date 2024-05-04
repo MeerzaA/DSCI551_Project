@@ -30,7 +30,7 @@ Here are some sample queries you can type in the search bar.
 
 **Zipcode:** `46184`, `18974`, `33701`
 
-**Business Name: ** `IHOP`, `Starbucks`, `Einstein Bros. Bagels` 
+**Business Name:** `IHOP`, `Starbucks`, `Einstein Bros. Bagels` 
 
 <h2 align="center">File Structure</h2>
 
