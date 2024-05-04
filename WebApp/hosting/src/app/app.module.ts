@@ -9,10 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ContentComponent } from './content/content.component';
 
-/*Primeng sidebar*/
-import { SidebarModule } from 'primeng/sidebar';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 
 
@@ -20,7 +17,6 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    SidebarModule,
     CommonModule
   ],
   declarations: [

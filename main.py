@@ -17,7 +17,6 @@ study_spot_index = {}
 def hash_location(location):
     return abs(hash(location))
 
-
 def update_index(spot_id, spot_data):
     # Update the study_spot_index with the spot_id and spot_data
     location = spot_data.get("city")  # Assuming city is the key for indexing
@@ -160,8 +159,8 @@ def delete_study_spot(spot_id):
             print(f"Failed to delete study spot with ID {spot_id}. Status code: {response.status_code}")
     return False
 
-
-###def search_study_spots_by_category(category):
+"""
+def search_study_spots_by_category(category):
     matching_spots = {}
     for db_url in DATABASE_URLS.values():
         response = requests.get(db_url + f"/spots.json?orderBy=\"categories\"&equalTo=\"{category}\"")
@@ -174,7 +173,7 @@ def delete_study_spot(spot_id):
         else:
             print(f"Failed to retrieve study spots from {db_url}. Status code: {response.status_code}")
     return matching_spots
-###
+"""
 
 # Use the below main method to test your code
 if __name__ == "__main__":
