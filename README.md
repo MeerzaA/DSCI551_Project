@@ -21,17 +21,16 @@ Install Python libraries:
 Install Node libraries: 
 `npm install firebase` | `npm install firebase-tools` `npm install -g @angular/cli` | `npm install axios` | `npm install bootstrap`
 
+To launch the web app locally, open a terminal, cd into /WebApp/hosting/ and do: `ng serve,` then go to http://localhost:4200/home 
+
 <h3 align="center">Webapp Query Instructions</h3>
-Our web app queries our 2 Firebase real-time databases; our search queries are limited to what is included in our database. 
+Our web app queries are limited to what is in our Firebase real-time databases. 
 
 Here are some sample queries you can type in the search bar. 
 
-**Zipcode: ** `46184`, `18974`, `33701`
+**Zipcode:** `46184`, `18974`, `33701`
 
 **Business Name: ** `IHOP`, `Starbucks`, `Einstein Bros. Bagels` 
-
-
-To launch the web app locally, open a terminal, cd into /WebApp/hosting/ and do: `ng serve,` then go to http://localhost:4200/home 
 
 <h2 align="center">File Structure</h2>
 
