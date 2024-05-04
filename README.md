@@ -26,9 +26,9 @@ Our web app queries our 2 Firebase real-time databases; our search queries are l
 
 Here are some sample queries you can type in the search bar. 
 
-**Zipcode: ** `46184`, `18974`,
+**Zipcode: ** `46184`, `18974`, `33701`
 
-**Business Name: ** ``
+**Business Name: ** `IHOP`, `Starbucks`, `Einstein Bros. Bagels` 
 
 
 To launch the web app locally, open a terminal, cd into /WebApp/hosting/ and do: `ng serve,` then go to http://localhost:4200/home 
